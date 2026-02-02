@@ -15,18 +15,18 @@ hash = "ab2e66065a94cca4886b303518e44bd8"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "6c71385"
-hash = "36a484acf6a0a0219c543ccb4cee218f"
+rev = "230b9c6"
+hash = "270915fa8282a19908449530ff66f7e2"
 
 [[plugin.deps]]
 use = "imsi32/yatline-githead"
-rev = "f8f969e"
-hash = "4d441b38138ce6492a4e10fa349fd65"
+rev = "929e52c"
+hash = "8282baf02fcd6aac00ccad2276775358"
 
 [[plugin.deps]]
 use = "imsi32/yatline"
-rev = "3227a30"
-hash = "8bd477fb2deadf9c00f28f8e7669834b"
+rev = "c5d4b48"
+hash = "e6e98d12b1648d1894c2b560d85eeaa7"
 
 [flavor]
 deps = []
