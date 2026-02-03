@@ -10,7 +10,6 @@ adjust-underline-thickness = 1
 
 # Theme
 theme = "catppuccin-mocha.conf"
-cursor-text = "#1e1e2e"
 background-opacity = 0
 background-blur = 50
 alpha-blending = "linear-corrected"
