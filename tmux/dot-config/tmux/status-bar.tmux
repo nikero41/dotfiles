@@ -31,7 +31,7 @@ set -ga status-left "\
 set -ga status-left "#{?window_zoomed_flag, #{E:@status-separator} #[bg=default#,fg=#{@thm_yellow}]}"
 
 # Windows
-set -g window-status-format " #I#{?#{!=:#{window_name},},: ,}#{window_name}#{?#{window_marked_flag}, 󰈽}"
+set -g window-status-format " #I#{?#{!=:#{window_name},},: ,}#{window_name}#{?#{window_marked_flag}, 󰈽} "
 set -g window-status-current-format "\
 #[bg=default,fg=${COLOR_PRIMARY},bold]\
 #[reverse]#I#{?#{!=:#{window_name},},: ,}\
