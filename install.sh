@@ -31,6 +31,22 @@ if [ ! -d "$HOME/.config/yazi/plugins/yatline-catppuccin.yazi" ]; then
 	git clone https://github.com/imsi32/yatline-catppuccin.yazi.git "$HOME/.config/yazi/plugins/yatline-catppuccin.yazi"
 fi
 
+log "install Node.js"
+fnm install --lts
+
+log "Install global npm packages"
+npm install -g \
+	@typescript/native-preview \
+	cspell \
+	eas-cli \
+	eslint \
+	eslint_d \
+	live-server \
+	neovim \
+	prisma \
+	turbo \
+	typescript
+
 log "Installation completed"
 log "Run \"op inject -i zsh/dot-config/zsh/env.template.zsh -o zsh/dot-config/zsh/env.zsh\""
 log "to set up environment variables"
