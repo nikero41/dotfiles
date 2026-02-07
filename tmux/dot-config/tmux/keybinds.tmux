@@ -49,10 +49,10 @@ unbind C-Down
 unbind C-Left
 unbind C-Right
 
-bind -T "resize pane left" -r H resize-pane -L 5
-bind -T "resize pane down" -r J resize-pane -D 5
-bind -T "resize pane up" -r K resize-pane -U 5
-bind -T "resize pane right" -r L resize-pane -R 5
+bind -N "Resize pane left" -r H resize-pane -L 5
+bind -N "Resize pane down" -r J resize-pane -D 5
+bind -N "Resize pane up" -r K resize-pane -U 5
+bind -N "Resize pane right" -r L resize-pane -R 5
 
 # make panes equal on =
 
