@@ -48,3 +48,9 @@ git:
   parseEmoji: true
 confirmOnQuit: true
 quitOnTopLevelReturn: true
+
+customCommands:
+  - key: "F"
+    command: "git fetch --all --prune"
+    context: "localBranches"
+    loadingText: "Fetching..."
