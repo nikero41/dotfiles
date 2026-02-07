@@ -35,7 +35,7 @@ vimcmd_visual_symbol = '[❮](bold fg:yellow)'
 show_milliseconds = true
 format = '[⏱ $duration]($style)'
 style = "fg:yellow bold"
-show_notifications = true
+show_notifications = false
 min_time_to_notify = 45000
 
 [git_branch]
