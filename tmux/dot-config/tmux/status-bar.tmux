@@ -31,7 +31,12 @@ set -ga status-left "\
 set -ga status-left "#{?window_zoomed_flag, #{E:@status-separator} #[bg=default#,fg=#{@thm_yellow}]}"
 
 # Windows
-set -g window-status-format " #I#{?#{!=:#{window_name},},: ,}#{window_name}#{?#{window_marked_flag}, 󰈽} "
+set -g window-status-format "\
+#{?#{window_bell_flag},#[bg=default#,fg=#{@thm_red}#,bold#,noreverse], }\
+#[#{?#{window_bell_flag},reverse}]#I#{?#{!=:#{window_name},},: ,}\
+#{window_name}\
+#{?#{window_marked_flag}, 󰈽}\
+#{?#{window_bell_flag},#[noreverse], }"
 set -g window-status-current-format "\
 #[bg=default,fg=${COLOR_PRIMARY},bold]\
 #[reverse]#I#{?#{!=:#{window_name},},: ,}\
@@ -43,7 +48,6 @@ set -gF window-status-separator " #{E:@status-separator} "
 set -g window-status-style "bg=default,fg=#{@thm_flamingo}"
 set -g window-status-last-style "fg=${COLOR_PRIMARY}"
 set -g window-status-activity-style "bg=#{@thm_red},fg=#{@thm_bg}"
-set -g window-status-bell-style "bg=#{@thm_red},fg=#{@thm_bg},bold"
 
 # Status Right
 set -g status-right-length 100
