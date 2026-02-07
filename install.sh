@@ -1,5 +1,7 @@
 #! /bin/zsh
 
+set -e
+
 log() {
 	printf "\n\e[1;34m====> %s <====\e[0m\n\n" "$1"
 }
