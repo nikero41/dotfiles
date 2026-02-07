@@ -18,11 +18,11 @@ zinit wait lucid as"completion" depth"1" for \
 
 zinit wait lucid depth"1" nocd for \
 	has"fnm" atload"_evalcache fnm env --use-on-cd" zdharma-continuum/null \
-	has'fzf' atload'_evalcache fzf --zsh' zdharma-continuum/null \
+	has"fzf" atload"_evalcache fzf --zsh" zdharma-continuum/null \
 	has"jenv" atload"_evalcache jenv init -" zdharma-continuum/null \
 	has"zoxide" atload"_evalcache zoxide init zsh" zdharma-continuum/null \
 	has"pnpm" atclone"./zplug.zsh" atpull"%atclone" g-plane/pnpm-shell-completion \
-	Aloxaf/fzf-tab \
+	has"fzf" Aloxaf/fzf-tab \
 	hlissner/zsh-autopair \
 	atinit"zicompinit; zicdreplay" zdharma-continuum/fast-syntax-highlighting \
 	atload"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
