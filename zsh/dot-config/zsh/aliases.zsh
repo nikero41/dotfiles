@@ -2,6 +2,11 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias dev="cd ~/Developer"
 
+alias mkdir="mkdir -pv"
+alias grep="grep --color=auto"
+alias du="du -h"
+alias df="df -h"
+
 alias nv="nvim"
 alias lg="lazygit"
 
