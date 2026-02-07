@@ -22,7 +22,7 @@ set -g @resurrect-save "S"
 # Continuum
 set -g @plugin "tmux-plugins/tmux-continuum"
 set -g @continuum-restore "on"
-set -g @continuum-save-interval "60"
+set -g @continuum-save-interval "15"
 
 # SessionX
 set -g @plugin "omerxx/tmux-sessionx"
