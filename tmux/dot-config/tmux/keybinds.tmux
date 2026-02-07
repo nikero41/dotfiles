@@ -39,8 +39,22 @@ bind -n MouseDown1Status {
   } 
 }
 
+# unbind resize-pane keys
+unbind M-Up
+unbind M-Down
+unbind M-Left
+unbind M-Right
+unbind C-Up
+unbind C-Down
+unbind C-Left
+unbind C-Right
+
+bind -T "resize pane left" -r H resize-pane -L 5
+bind -T "resize pane down" -r J resize-pane -D 5
+bind -T "resize pane up" -r K resize-pane -U 5
+bind -T "resize pane right" -r L resize-pane -R 5
+
 # make panes equal on =
-# resize panes
 
 # bind V choose-tree -F "#{E:@custom_choose_tree_format}" -Z "join-pane -h -s "%%""
 # bind S choose-tree -F "#{E:@custom_choose_tree_format}" -Z "join-pane -v -s "%%""
