@@ -4,7 +4,7 @@ zle_highlight=('paste:none')
 stty -ixon
 
 # History
-HISTSIZE=5000
+HISTSIZE=1000000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
