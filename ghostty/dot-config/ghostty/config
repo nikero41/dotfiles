@@ -42,7 +42,6 @@ custom-shader = "shaders/cursor_frozen.glsl"
 # Keybinding
 keybind = cmd+s>shift+r=reload_config
 keybind = cmd+s>x=close_surface
-keybind = cmd+s>n=new_window
 keybind = alt+left=unbind
 keybind = alt+right=unbind
 
