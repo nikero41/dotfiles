@@ -39,6 +39,8 @@ bind -n MouseDown1Status {
   } 
 }
 
+bind C-S-l switch-client -l
+
 # unbind resize-pane keys
 unbind M-Up
 unbind M-Down
