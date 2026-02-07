@@ -57,19 +57,19 @@ set -g @cpu_high_icon ""
 
 # Battery
 set -g @plugin "tmux-plugins/tmux-battery"
-set -g @batt_icon_charge_tier8 '󰂂'
-set -g @batt_icon_charge_tier7 '󰂁'
-set -g @batt_icon_charge_tier6 '󰂀'
-set -g @batt_icon_charge_tier5 '󰁿'
-set -g @batt_icon_charge_tier4 '󰁾'
-set -g @batt_icon_charge_tier3 '󰁼'
-set -g @batt_icon_charge_tier2 '󰁻'
-set -g @batt_icon_charge_tier1 '󰁺'
-set -g @batt_icon_status_charged '󰁹'
-set -g @batt_icon_status_charging '󰂄'
-set -g @batt_icon_status_discharging '󰂃'
-set -g @batt_icon_status_attached '󰂄'
-set -g @batt_icon_status_unknown '󰂄'
+set -g @batt_icon_charge_tier8 "󰂂"
+set -g @batt_icon_charge_tier7 "󰂁"
+set -g @batt_icon_charge_tier6 "󰂀"
+set -g @batt_icon_charge_tier5 "󰁿"
+set -g @batt_icon_charge_tier4 "󰁾"
+set -g @batt_icon_charge_tier3 "󰁼"
+set -g @batt_icon_charge_tier2 "󰁻"
+set -g @batt_icon_charge_tier1 "󰁺"
+set -g @batt_icon_status_charged "󰁹"
+set -g @batt_icon_status_charging "󰂄"
+set -g @batt_icon_status_discharging "󰂃"
+set -g @batt_icon_status_attached "󰂄"
+set -g @batt_icon_status_unknown "󰂄"
 
 set -g @batt_color_charge_primary_tier8 "#{@thm_green}"
 set -g @batt_color_charge_primary_tier7 "#{@thm_green}"
