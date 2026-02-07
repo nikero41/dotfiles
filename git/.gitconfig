@@ -1,81 +1,62 @@
- [user]
-	email = snikoletopoulos@hotmail.com
-	name = Stavros Nikoletopoulos
+[user]
+email = snikoletopoulos@hotmail.com
+name = Stavros Nikoletopoulos
+
 [core]
-	editor = nvim
-[pull]
-	rebase = false
-[push]
-    autoSetupRemote = true
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+editor = nvim
+pager = delta
+diff = delta
+log = delta
+reflog = delta
+show = delta
+
 [init]
-	defaultBranch = main
-[column]
-	ui = auto
-[branch]
-	sort = -committerdate
+defaultBranch = main
 
-; Delta
-[core]
-    pager = delta
-  	diff = delta
-  	log = delta
-  	reflog = delta
-  	show = delta
-[interactive]
-    diffFilter = delta --color-only
-[delta]
-    navigate = true # use n and N to move between diff sections
-  	colorMoved = default
-  	features = mellow-barbet
-  	side-by-side = false
-    syntax-theme = OneHalfDark
-    tabs = 2
-[diff]
-    colorMoved = default
+[pull]
+rebase = false
+
+[push]
+autoSetupRemote = true
+
+[rerere]
+enabled = true
+autoUpdate = true
+
 [merge]
-    tool = nvim
-[mergetool]
-    prompt = false
-[mergetool "nvim"]
-  cmd = nvim -c "DiffviewOpen"
+tool = nvim
+conflictStyle = zdiff3
 
-; Delta themes
-[delta "mellow-barbet"]
-    # author: https://github.com/kvrohit
-    # To configure terminal colors see https://github.com/kvrohit/mellow.nvim#terminals
-    dark = true
-    syntax-theme = base16
-    line-numbers = true
-    side-by-side = true
-    file-style = brightwhite
-    file-decoration-style = none
-    file-added-label = [+]
-    file-copied-label = [==]
-    file-modified-label = [*]
-    file-removed-label = [-]
-    file-renamed-label = [->]
-    hunk-header-decoration-style = "#3e3e43" box ul
-    plus-style = brightgreen black
-    plus-emph-style = black green
-    minus-style = brightred black
-    minus-emph-style = black red
-    line-numbers-minus-style = brightred
-    line-numbers-plus-style = brightgreen
-    line-numbers-left-style = "#3e3e43"
-    line-numbers-right-style = "#3e3e43"
-    line-numbers-zero-style = "#57575f"
-    zero-style = syntax
-    whitespace-error-style = black bold
-    blame-code-style = syntax
-    blame-palette = "#161617" "#1b1b1d" "#2a2a2d" "#3e3e43"
-    merge-conflict-begin-symbol = ~
-    merge-conflict-end-symbol = ~
-    merge-conflict-ours-diff-header-style = yellow bold
-    merge-conflict-ours-diff-header-decoration-style = "#3e3e43" box
-    merge-conflict-theirs-diff-header-style = yellow bold
-    merge-conflict-theirs-diff-header-decoration-style = "#3e3e43" box
+[mergetool]
+prompt = false
+
+[mergetool "nvim"]
+cmd = nvim -c "DiffviewOpen"
+
+[column]
+ui = auto
+
+[branch]
+sort = -committerdate
+
+[filter "lfs"]
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+process = git-lfs filter-process
+required = true
+
+[include]
+path = ~/.config/git/delta.gitconfig
+
+[fetch]
+prune = true
+pruneTags = true
+
+[commit]
+verbose = true
+
+[help]
+autocorrect = prompt
+
+[tag]
+sort = -version:refname
