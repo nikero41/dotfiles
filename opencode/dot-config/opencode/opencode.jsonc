@@ -8,6 +8,7 @@
       "*": "allow",
       "git push": "deny",
       "npm *": "ask",
+      "rm -rf": "deny",
     },
   },
   "keybinds": {
