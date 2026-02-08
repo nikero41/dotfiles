@@ -107,4 +107,18 @@ set -g @tmux-weather-format "%c+%t+(%f)"
 set -g @plugin "tmux-plugins/tmux-online-status"
 set -g @offline_icon "offline"
 
+# Thumbs
+set -g @plugin "fcsonline/tmux-thumbs"
+unbind \;
+bind \; thumbs-pick
+set -g @thumbs-key ;
+set -gF @thumbs-fg-color "#{@thm_mauve}"
+set -gF @thumbs-hint-fg-color "#{@thm_peach}"
+set -gF @thumbs-select-fg-color "#{@thm_red}"
+set -gF @thumbs-multi-fg-color "#{@thm_green}"
+set -g @thumbs-contrast 1
+set -g @thumbs-command 'echo -n {} | pbcopy'
+
+run-shell ~/.tmux/plugins/tmux-thumbs/tmux-thumbs.tmux
+
 run "#{TMUX_PLUGIN_PATH}/tpm/tpm"
