@@ -51,7 +51,6 @@ set -g @cpu_high_thresh "85"
 set -g @cpu_medium_bg_color "#[bg=default]"
 set -g @cpu_high_fg_color "#[fg=#{@thm_crust}]"
 set -g @cpu_high_bg_color "#[bg=red]"
-set -g @cpu_low_icon "off"
 set -g @cpu_medium_icon ""
 set -g @cpu_high_icon ""
 

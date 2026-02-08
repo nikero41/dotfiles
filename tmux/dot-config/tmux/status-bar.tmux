@@ -53,16 +53,8 @@ set -g window-status-activity-style "bg=#{@thm_red},fg=#{@thm_bg}"
 set -g status-right-length 100
 set -g status-right ""
 set -ga status-right "\
-#{?#{==:#{online_status},offline},\
-#[fg=#{@thm_red}]󰤮\
- #{E:@status-separator}}" # NOTE: `online_status` is readable once
-set -ga status-right "\
-#{?#{!=:#{cpu_icon},off},\
-#{cpu_bg_color}#{cpu_fg_color} #{cpu_icon} #{cpu_percentage} \
-#{E:@status-separator} \
-}"
-set -ga status-right "\
-#{battery_color_fg}#{battery_icon}#{?#{<=:#{battery_percentage},60}, #{battery_percentage}} #{battery_remain}"
-set -ga status-right " #{E:@status-separator} "
-set -ga status-right "#[bg=default,fg=#{@thm_blue}]#{weather} #{E:@status-separator} "
+#{?#{==:#{online_status},offline},[fg=#{@thm_red}]󰤮 #{E:@status-separator} }"
+set -ga status-right "#(~/.config/tmux/scripts/cpu.sh)"
+set -ga status-right "#(~/.config/tmux/scripts/battery.sh)"
+set -ga status-right "#(~/.config/tmux/scripts/weather.sh)"
 set -ga status-right "#[bg=default,fg=#{@thm_mauve}]󰭦 %e %b 󰅐 %I:%M %p"
