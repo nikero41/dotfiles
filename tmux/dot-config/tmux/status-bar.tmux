@@ -56,7 +56,6 @@ set -ga status-right "\
 #{?#{==:#{online_status},offline},\
 #[fg=#{@thm_red}]󰤮\
  #{E:@status-separator}}" # NOTE: `online_status` is readable once
-set -ga status-right "#{?#{!=:#(bash ~/.config/tmux/scripts/spotify-playing.sh),},#(bash ~/.config/tmux/scripts/spotify-playing.sh) #{E:@status-separator} }"
 set -ga status-right "\
 #{?#{!=:#{cpu_icon},off},\
 #{cpu_bg_color}#{cpu_fg_color} #{cpu_icon} #{cpu_percentage} \
