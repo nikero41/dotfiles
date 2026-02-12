@@ -1,4 +1,5 @@
 shell-integration-features = "no-cursor,sudo"
+bell-features = title,system,attention,border,audio
 
 # Font
 font-family = "FiraCode Nerd Font Med"
