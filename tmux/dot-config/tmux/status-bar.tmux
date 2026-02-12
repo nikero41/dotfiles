@@ -53,7 +53,7 @@ set -g window-status-activity-style "bg=#{@thm_red},fg=#{@thm_bg}"
 set -g status-right-length 100
 set -g status-right ""
 set -ga status-right "\
-#{?#{==:#{online_status},offline},[fg=#{@thm_red}]󰤮 #{E:@status-separator} }"
+#{?#{==:#{online_status},offline},#[fg=#{@thm_red}]󰤮 #{E:@status-separator} }"
 set -ga status-right "#(~/.config/tmux/scripts/cpu.sh)"
 set -ga status-right "#(~/.config/tmux/scripts/battery.sh)"
 set -ga status-right "#(~/.config/tmux/scripts/weather.sh)"
