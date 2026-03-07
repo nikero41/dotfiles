@@ -1,0 +1,11 @@
+ui:
+  hideHeader: true
+  hideFooter: false
+  showFileTree: true
+  fileTreeWidth: 30
+  searchTreeWidth: 60
+  # Icon style: "status" (default), "simple", "filetype", "full", "unicode", or "ascii"
+  icons: nerd-fonts-filetype
+  colorFileNames: true
+  showDiffStats: true
+  sideBySide: true

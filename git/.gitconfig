@@ -10,6 +10,9 @@ log = delta
 reflog = delta
 show = delta
 
+[pager]
+diff = diffnav
+
 [init]
 defaultBranch = main
 
