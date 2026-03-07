@@ -32,3 +32,6 @@ rustup update
 
 log "Updating Bun"
 bun upgrade
+
+log "Update Github CLI extensions"
+gh extension upgrade --all
