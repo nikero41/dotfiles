@@ -11,10 +11,5 @@
       "rm -rf": "deny",
     },
   },
-  "keybinds": {
-    "session_child_cycle": "ctrl+alt+l",
-    "session_child_cycle_reverse": "ctrl+alt+h",
-  },
-  "theme": "catppuccin",
   "plugin": ["@mohak34/opencode-notifier@latest"],
 }
