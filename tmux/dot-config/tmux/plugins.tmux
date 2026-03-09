@@ -15,8 +15,8 @@ set -g @plugin "mrjones2014/smart-splits.nvim"
 
 # Resurrect
 set -g @plugin "tmux-plugins/tmux-resurrect"
-set -g @resurrect-strategy-nvim "session"
 set -g @resurrect-capture-pane-contents "on"
+set -g @resurrect-processes "false"
 set -g @resurrect-save "S"
 
 # Continuum
