@@ -11,7 +11,13 @@ set -g @plugin "tmux-plugins/tmux-sensible"
 set -g @plugin "wfxr/tmux-fzf-url"
 set -g @plugin "nhdaly/tmux-better-mouse-mode"
 set -g @plugin "jaclu/tmux-menus"
+
+# Smart Splits
 set -g @plugin "mrjones2014/smart-splits.nvim"
+set -g @smart-splits_resize_left_key  ""
+set -g @smart-splits_resize_down_key  ""
+set -g @smart-splits_resize_up_key    ""
+set -g @smart-splits_resize_right_key ""
 
 # Resurrect
 set -g @plugin "tmux-plugins/tmux-resurrect"

@@ -56,6 +56,8 @@ bind -N "Resize pane down" -r J resize-pane -D 5
 bind -N "Resize pane up" -r K resize-pane -U 5
 bind -N "Resize pane right" -r L resize-pane -R 5
 
+bind -n "C-\\" select-pane -l
+
 # make panes equal on =
 
 # bind V choose-tree -F "#{E:@custom_choose_tree_format}" -Z "join-pane -h -s "%%""
