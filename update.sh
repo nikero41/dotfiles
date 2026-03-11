@@ -30,6 +30,9 @@ npm update -g
 log "Updating Rust toolchain"
 rustup update
 
+log "Updating Cargo packages"
+cargo install-update -a
+
 log "Updating Bun"
 bun upgrade
 
