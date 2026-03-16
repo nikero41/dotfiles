@@ -26,3 +26,7 @@ setopt hist_verify
 setopt interactive_comments # Allow comments in interactive shell
 setopt auto_cd              # cd into directories by typing name
 setopt pushd_ignore_dups    # Don't push duplicates
+
+# Edit prompt in editor
+autoload -Uz edit-command-line
+zle -N edit-command-line
