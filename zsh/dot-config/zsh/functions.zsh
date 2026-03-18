@@ -65,3 +65,32 @@ clear_evalcache() {
 	rm "$ZSH_EVALCACHE_DIR"/init-*.sh
 	echo "evalcache cleared"
 }
+
+compile_zsh_configs() {
+	local config_dir="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+	local src zwc
+	local -a files=(
+		"$config_dir/aliases.zsh"
+		"$config_dir/completions.zsh"
+		"$config_dir/env.zsh"
+		"$config_dir/functions.zsh"
+		"$config_dir/init.zsh"
+		"$config_dir/keybinds.zsh"
+		"$config_dir/polish.zsh"
+		"$config_dir/variables.zsh"
+		"$config_dir/vi-mode.zsh"
+		"$config_dir/zinit.zsh"
+	)
+
+	for src in "${files[@]}"; do
+		[[ -r "$src" ]] || continue
+		zwc="${src}.zwc"
+
+		if [[ ! -e "$zwc" || "$src" -nt "$zwc" ]]; then
+			zcompile -R -- "$src" || return 1
+			print -r "compiled: $src"
+		fi
+	done
+
+	print -r "zsh compile done"
+}

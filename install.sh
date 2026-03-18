@@ -24,6 +24,9 @@ stow */
 log "Reloading zsh"
 source ~/.zshrc
 
+log "Generate zsh files"
+compile_zsh_configs
+
 log "Install tmux plugins"
 ~/.config/tmux/plugins/tpm/bin/install_plugins
 
@@ -50,5 +53,5 @@ npm install -g \
 	typescript
 
 log "Installation completed"
-log "Run \"op inject -i zsh/dot-config/zsh/env.template -o zsh/dot-config/zsh/env.zsh\""
+log "Run \"op inject -i zsh/dot-config/zsh/env.template -o zsh/dot-config/zsh/env.zsh; compile_zsh_configs\""
 log "to set up environment variables"

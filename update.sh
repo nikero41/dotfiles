@@ -38,3 +38,6 @@ bun upgrade
 
 log "Update Github CLI extensions"
 gh extension upgrade --all
+
+log "Regenerate zsh files"
+compile_zsh_configs
