@@ -5,13 +5,12 @@ name = Stavros Nikoletopoulos
 [core]
 editor = nvim
 pager = delta
-diff = delta
-log = delta
-reflog = delta
-show = delta
 
 [pager]
 diff = diffnav
+show = diffnav
+log = delta
+reflog = delta
 
 [init]
 defaultBranch = main
