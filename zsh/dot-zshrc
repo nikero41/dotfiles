@@ -9,11 +9,11 @@ fi
 source "$CONFIG/init.zsh"
 for file in "$CONFIG"/*.zsh; do
 	if [[ 
-		"$file" == "$CONFIG/env.zsh" &&
-		"$file" == "$CONFIG/init.zsh" &&
-		"$file" == "$CONFIG/aliases.zsh" &&
-		"$file" == "$CONFIG/functions.zsh" &&
-		"$file" == "$CONFIG/polish.zsh" &&
+		"$file" == "$CONFIG/env.zsh" ||
+		"$file" == "$CONFIG/init.zsh" ||
+		"$file" == "$CONFIG/aliases.zsh" ||
+		"$file" == "$CONFIG/functions.zsh" ||
+		"$file" == "$CONFIG/polish.zsh" ||
 		"$file" == "$CONFIG/keybinds.zsh" ]] \
 		; then
 		continue
