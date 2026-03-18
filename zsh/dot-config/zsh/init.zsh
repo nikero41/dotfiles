@@ -1,7 +1,7 @@
 setopt nomatch
 
 zle_highlight=('paste:none')
-stty -ixon
+[[ -t 0 ]] && stty -ixon
 
 # History
 HISTSIZE=1000000
