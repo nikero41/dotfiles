@@ -10,34 +10,30 @@ zinit depth"1" nocd light-mode for \
 	has"starship" atinit"_evalcache starship init zsh" zdharma-continuum/null \
 	jeffreytse/zsh-vi-mode
 
-zinit wait lucid as"completion" depth"1" for \
-	has"docker" OMZP::docker/completions/_docker \
-	has"pod" OMZP::pod/_pod \
+zinit wait"0" lucid depth"1" for \
+	has"pnpm" atclone"./zplug.zsh; zinit creinstall -q ." atpull"%atclone" g-plane/pnpm-shell-completion
+
+zinit wait"0" lucid depth"1" nocd for \
+	hlissner/zsh-autopair \
+	zsh-users/zsh-history-substring-search \
+ 	atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" atclone"fast-theme XDG:catppuccin-mocha" atpull"%atclone" zdharma-continuum/fast-syntax-highlighting \
+ 	blockf atclone"zinit creinstall -q ." atpull"%atclone" zsh-users/zsh-completions \
+ 	atload"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions
+
+zinit wait"1" lucid depth"1" nocd for \
+	has"fzf" atload"_evalcache fzf --zsh" Aloxaf/fzf-tab \
+	has"zoxide" atload"_evalcache zoxide init zsh" zdharma-continuum/null \
+	has"fnm" atload"_evalcache fnm env --use-on-cd" zdharma-continuum/null
+
+zinit wait"2" lucid as"completion" depth"1" for \
 	has"rustc" OMZP::rust/_rustc \
 	if"[ -s \"$HOME/.bun/_bun\" ]" is-snippet "$HOME/.bun/_bun"
 
-zinit wait lucid depth"1" nocd for \
-	has"fnm" atload"_evalcache fnm env --use-on-cd" zdharma-continuum/null \
-	has"fzf" atload"_evalcache fzf --zsh" zdharma-continuum/null \
-	has"jenv" atload"_evalcache jenv init -" zdharma-continuum/null \
-	has"zoxide" atload"_evalcache zoxide init zsh" zdharma-continuum/null \
-	has"pnpm" atclone"./zplug.zsh" atpull"%atclone" g-plane/pnpm-shell-completion \
-	has"fzf" Aloxaf/fzf-tab \
-	hlissner/zsh-autopair \
-	zsh-users/zsh-history-substring-search \
-	atinit"zicompinit; zicdreplay" zdharma-continuum/fast-syntax-highlighting \
-	atload"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
-	blockf atpull"zinit creinstall -q ." zsh-users/zsh-completions
-
-zinit wait lucid depth"1" nocd for \
-	has"delta" atload"_evalcache delta --generate-completion zsh" zdharma-continuum/null \
-	has"op" atload"_evalcache op completion zsh" zdharma-continuum/null \
-	has"opencode" atload"_evalcache opencode completion" zdharma-continuum/null \
-	has"ngrok" atload"_evalcache ngrok completion" zdharma-continuum/null \
-	has"spotify_player" atload"_evalcache spotify_player generate zsh" zdharma-continuum/null
+zinit wait"3" lucid depth"1" nocd for \
+	has"jenv" atload"_evalcache jenv init -" zdharma-continuum/null
 
 # Autostart tmux
-zinit wait lucid depth"1" nocd \
+zinit wait"4" lucid depth"1" nocd \
 	if'[[ -z $TMUX ]] && [[ "$TERM_PROGRAM" != "vscode" && "$TERM_PROGRAM" != "" ]]' \
 	atload"start_tmux" \
 	for zdharma-continuum/null
