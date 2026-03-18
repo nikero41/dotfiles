@@ -50,5 +50,5 @@ npm install -g \
 	typescript
 
 log "Installation completed"
-log "Run \"op inject -i zsh/dot-config/zsh/env.template.zsh -o zsh/dot-config/zsh/env.zsh\""
+log "Run \"op inject -i zsh/dot-config/zsh/env.template -o zsh/dot-config/zsh/env.zsh\""
 log "to set up environment variables"
