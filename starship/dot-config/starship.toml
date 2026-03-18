@@ -46,7 +46,7 @@ format = '[$symbol $branch]($style)'
 format = '[\($hash$tag\)]($style)'
 
 [git_metrics]
-format = '[+$added]($added_style)\]\[[-$deleted]($deleted_style)'
+format = '[+$added]($added_style) [-$deleted]($deleted_style)'
 
 [git_state]
 format = '[$state ($progress_current/$progress_total)]($style)'
