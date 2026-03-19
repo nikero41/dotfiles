@@ -38,6 +38,7 @@ fi
 
 log "install Node.js"
 fnm install --lts
+fnm alias lts-latest default
 fnm use lts-latest
 
 log "Install global npm packages"
