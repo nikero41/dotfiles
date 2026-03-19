@@ -42,6 +42,7 @@ fnm use lts-latest
 
 log "Install global npm packages"
 npm install -g \
+	@fsouza/prettierd \
 	@typescript/native-preview \
 	cspell \
 	eas-cli \
