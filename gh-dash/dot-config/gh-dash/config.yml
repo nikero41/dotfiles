@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://gh-dash.dev/schema.json
 prSections:
   - title: My Pull Requests
     filters: is:open author:@me
@@ -15,16 +16,34 @@ issuesSections:
     filters: is:open assignee:@me
   - title: Involved
     filters: is:open involves:@me -author:@me
+notificationsSections:
+  - title: All
+    filters: ""
+  - title: Created
+    filters: reason:author
+  - title: Participating
+    filters: reason:participating
+  - title: Mentioned
+    filters: reason:mention
+  - title: Review Requested
+    filters: reason:review-requested
+  - title: Assigned
+    filters: reason:assign
+  - title: Subscribed
+    filters: reason:subscribed
+  - title: Team Mentioned
+    filters: reason:team-mention
 repo:
   branchesRefetchIntervalSeconds: 30
   prsRefetchIntervalSeconds: 60
 defaults:
   preview:
     open: true
-    width: 50
+    width: 70
   prsLimit: 20
   prApproveComment: LGTM
   issuesLimit: 20
+  notificationsLimit: 20
   view: prs
   layout:
     prs:
@@ -61,12 +80,22 @@ defaults:
         width: 20
         hidden: true
   refetchIntervalMinutes: 30
+
 keybindings:
-  universal: []
+  universal:
+    - key: g
+      name: lazygit
+      command: cd {{.RepoPath}}; lazygit
   issues: []
-  prs: []
+  prs:
+    - key: T
+      command: >-
+        tmux new-window '
+          gh enhance -R {{.RepoName}} {{.PrNumber}}
+        '
   branches: []
 repoPaths: {}
+
 theme:
   colors:
     text:
@@ -89,7 +118,7 @@ theme:
       showSeparator: true
       compact: false
 pager:
-  diff: ""
+  diff: "diffnav"
 confirmQuit: false
 showAuthorIcons: true
 smartFilteringAtLaunch: true
