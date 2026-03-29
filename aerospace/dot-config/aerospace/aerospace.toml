@@ -197,7 +197,18 @@ alt-left = 'exec-and-forget aerospace list-workspaces --monitor mouse --empty no
 alt-right = 'exec-and-forget aerospace list-workspaces --monitor mouse --empty no | aerospace workspace next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
+alt-shift-enter = 'mode apps'
 alt-shift-semicolon = 'mode service'
+
+[mode.apps.binding]
+esc = 'mode main'
+alt-t = ['exec-and-forget open -a /Applications/Ghostty.app', 'mode main']
+alt-f = [
+  'exec-and-forget open -a /System/Library/CoreServices/Finder.app',
+  'mode main',
+]
+alt-z = ['exec-and-forget open -a /Applications/Zen.app', 'mode main']
+alt-q = ['exec-and-forget open -a "/System/Applications/QuickTime Player.app"', 'mode main']
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
