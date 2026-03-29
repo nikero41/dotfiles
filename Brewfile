@@ -75,12 +75,27 @@ cask "1password-cli"
 cask "nikitabobko/tap/aerospace"
 cask "betterdisplay"
 cask "ghostty"
+cask "hiddenbar"
+cask "localsend"
+cask "linearmouse"
 cask "ngrok"
+cask "raycast"
 cask "react-native-debugger"
 cask "mediosz/tap/swipeaerospace"
 cask "warp"
 cask "wezterm"
 cask "zulu@17"
+mas "Amphetamine", id: 937984704
+mas "Bitwarden", id: 1352778147
+mas "DevCleaner", id: 1388020431
+mas "Developer", id: 640199958
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Slack", id: 803453959
+mas "TestFlight", id: 899247664
+mas "WhatsApp", id: 310633997
+mas "Xcode", id: 497799835
 go "github.com/air-verse/air"
 go "github.com/spf13/cobra-cli"
 go "mvdan.cc/gofumpt"

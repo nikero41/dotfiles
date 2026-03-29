@@ -64,6 +64,19 @@ To use these dotfiles on your system:
    update dotfiles, simply pull the latest changes from this repository and
    re-stow the relevant configurations.
 
+## Apps that are not installed by default
+
+- [1password](https://1password.com/)
+- [Beekeeper Studio](https://www.beekeeperstudio.io/)
+- [Docker](https://docs.docker.com/desktop/setup/install/mac-install/#install-and-run-docker-desktop-on-mac)
+- [Google Chrome](https://www.google.com/chrome/)
+- [Postman](https://www.postman.com/)
+- [React Native DevTools](https://github.com/Buoy-gg/Buoy-Desktop)
+- [Spotify](https://www.spotify.com/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Wispr Fow](https://wisprflow.ai/)
+- [Zen](https://zen-browser.app/)
+
 ## Contributing
 
 Suggestions and improvements to these dotfiles are welcome! If you have ideas
