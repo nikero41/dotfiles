@@ -6,7 +6,7 @@
   "permission": {
     "edit": "ask",
     "bash": {
-      "*": "ask",
+      "*": "allow",
       "git push": "deny",
       "npm *": "ask",
       "rm -rf": "deny",
