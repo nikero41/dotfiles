@@ -47,3 +47,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# gh enhance
+export ENHANCE_THEME=catppuccin_mocha
