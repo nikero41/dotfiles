@@ -13,6 +13,9 @@ alias df="df -h"
 alias nv="nvim"
 alias lg="lazygit"
 
+# git
+alias groot="cd \"$(git rev-parse --show-toplevel)\""
+
 # eza
 alias ls="eza --group-directories-first --icons --oneline"
 alias lsl="eza --group-directories-first --icons --long --no-user --git"
