@@ -49,7 +49,7 @@ npm install -g \
 	eas-cli \
 	eslint \
 	eslint_d \
-	live-server \
+	serve \
 	neovim \
 	prisma \
 	turbo \
