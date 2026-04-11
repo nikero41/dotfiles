@@ -202,13 +202,13 @@ alt-shift-semicolon = 'mode service'
 
 [mode.apps.binding]
 esc = 'mode main'
-alt-t = ['exec-and-forget open -a /Applications/Ghostty.app', 'mode main']
-alt-f = [
+t = ['exec-and-forget open -a /Applications/Ghostty.app', 'mode main']
+f = [
   'exec-and-forget open -a /System/Library/CoreServices/Finder.app',
   'mode main',
 ]
-alt-z = ['exec-and-forget open -a /Applications/Zen.app', 'mode main']
-alt-q = ['exec-and-forget open -a "/System/Applications/QuickTime Player.app"', 'mode main']
+z = ['exec-and-forget open -a /Applications/Zen.app', 'mode main']
+q = ['exec-and-forget open -a "/System/Applications/QuickTime Player.app"', 'mode main']
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
