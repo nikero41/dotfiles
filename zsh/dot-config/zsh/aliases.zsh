@@ -12,6 +12,7 @@ alias df="df -h"
 
 alias nv="nvim"
 alias lg="lazygit"
+alias oc="opencode --port"
 
 # git
 alias groot="cd \"$(git rev-parse --show-toplevel)\""
