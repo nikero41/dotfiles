@@ -4,7 +4,6 @@
 \.stow-local-ignore
 \.stowrc
 install.sh
-update.sh
 Brewfile
 README.md
 cspell.json
