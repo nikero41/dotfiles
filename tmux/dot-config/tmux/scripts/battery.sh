@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PLUGIN_DIR="$TMUX_PLUGIN_PATH/tmux-battery/scripts"
+PLUGIN_DIR="$TMUX_PLUGIN_MANAGER_PATH/tmux-battery/scripts"
 
 source "$PLUGIN_DIR/helpers.sh"
 

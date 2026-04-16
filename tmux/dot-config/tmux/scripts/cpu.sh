@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PLUGIN_DIR="$TMUX_PLUGIN_PATH/tmux-cpu/scripts"
+PLUGIN_DIR="$TMUX_PLUGIN_MANAGER_PATH/tmux-cpu/scripts"
 
 CPU_PERCENTAGE="$("$PLUGIN_DIR"/cpu_percentage.sh)"
 CPU_ICON="$("$PLUGIN_DIR"/cpu_icon.sh)"

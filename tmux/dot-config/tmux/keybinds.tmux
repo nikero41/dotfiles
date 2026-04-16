@@ -29,7 +29,7 @@ bind -N "pet" P run-shell \
 
 bind -n MouseDown1Status {
   if -F "#{==:#{mouse_status_range},session}" {
-    run "#{TMUX_PLUGIN_PATH}/tmux-sessionx/scripts/sessionx.sh"
+    run "#{TMUX_PLUGIN_MANAGER_PATH}/tmux-sessionx/scripts/sessionx.sh"
   } 
   if -F "#{==:#{mouse_status_range},window}" {
       select-window

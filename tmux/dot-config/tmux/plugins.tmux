@@ -1,8 +1,8 @@
 # Bootstrap Tmux Plugin Manager
-if 'test ! -d "#{TMUX_PLUGIN_PATH}/tpm"' {
-  run 'mkdir -p "#{TMUX_PLUGIN_PATH}"'
-  run 'git clone https://github.com/tmux-plugins/tpm "#{TMUX_PLUGIN_PATH}/tpm"'
-  run "#{TMUX_PLUGIN_PATH}/tpm/bin/install_plugins"
+if 'test ! -d "#{TMUX_PLUGIN_MANAGER_PATH}/tpm"' {
+  run 'mkdir -p "#{TMUX_PLUGIN_MANAGER_PATH}"'
+  run 'git clone https://github.com/tmux-plugins/tpm "#{TMUX_PLUGIN_MANAGER_PATH}/tpm"'
+  run "#{TMUX_PLUGIN_MANAGER_PATH}/tpm/bin/install_plugins"
 }
 
 # List of plugins
@@ -11,6 +11,7 @@ set -g @plugin "tmux-plugins/tmux-sensible"
 set -g @plugin "wfxr/tmux-fzf-url"
 set -g @plugin "nhdaly/tmux-better-mouse-mode"
 set -g @plugin "jaclu/tmux-menus"
+set -g @plugin "Ataraxy-Labs/opensessions"
 
 # Smart Splits
 set -g @plugin "mrjones2014/smart-splits.nvim"
@@ -127,6 +128,6 @@ set -gF @thumbs-multi-fg-color "#{@thm_green}"
 set -g @thumbs-contrast 1
 set -g @thumbs-command 'echo -n {} | pbcopy'
 
-run "#{TMUX_PLUGIN_PATH}/tmux-thumbs/tmux-thumbs.tmux"
+run "#{TMUX_PLUGIN_MANAGER_PATH}/tmux-thumbs/tmux-thumbs.tmux"
 
-run "#{TMUX_PLUGIN_PATH}/tpm/tpm"
+run "#{TMUX_PLUGIN_MANAGER_PATH}/tpm/tpm"
