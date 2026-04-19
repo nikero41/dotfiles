@@ -8,6 +8,7 @@ gui:
   authorColors:
     "Stavros Nikoletopoulos": "#f47b20"
     "*": "#b4befe"
+  fileTreeSortOrder: foldersFirst
   scrollHeight: 4
   showListFooter: false
   showCommandLog: false
