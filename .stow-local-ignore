@@ -3,7 +3,7 @@
 \.gitignore
 \.stow-local-ignore
 \.stowrc
-install.sh
+Makefile
 Brewfile
 README.md
 cspell.json
