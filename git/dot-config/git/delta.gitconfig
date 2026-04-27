@@ -8,6 +8,8 @@ features = catppuccin-mocha
 side-by-side = false
 syntax-theme = OneHalfDark
 tabs = 2
+true-color = always
+hyperlinks = true
 
 [diff]
 colorMoved = default
