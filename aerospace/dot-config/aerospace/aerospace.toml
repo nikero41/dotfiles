@@ -199,6 +199,7 @@ alt-right = 'exec-and-forget aerospace list-workspaces --monitor mouse --empty n
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-enter = 'mode apps'
 alt-shift-semicolon = 'mode service'
+alt-shift-esc = 'mode break'
 
 [mode.apps.binding]
 esc = 'mode main'
@@ -208,7 +209,10 @@ f = [
   'mode main',
 ]
 z = ['exec-and-forget open -a /Applications/Zen.app', 'mode main']
-q = ['exec-and-forget open -a "/System/Applications/QuickTime Player.app"', 'mode main']
+q = [
+  'exec-and-forget open -a "/System/Applications/QuickTime Player.app"',
+  'mode main',
+]
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -228,6 +232,9 @@ alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
+
+[mode.break.binding]
+esc = 'mode main'
 
 # Workspace assignments
 [workspace-to-monitor-force-assignment]
