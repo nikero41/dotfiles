@@ -87,6 +87,7 @@ notify_end = "always"
 [commands]
 "tmux plugins" = "~/.config/tmux/plugins/tpm/bin/update_plugins all"
 "Clear evalcache" = "zsh -ic clear_evalcache"
+"Compile zsh configurations" = "zsh -ic compile_zsh_configs"
 
 [python]
 # enable_pip_review = true                         ###disabled by default

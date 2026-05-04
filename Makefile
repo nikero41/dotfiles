@@ -68,7 +68,7 @@ install-global-npm:
 .PHONY: setup-zsh
 setup-zsh:
 	@$(call log,"Setting up zsh configuration")
-	@compile_zsh_configs
+	@zsh -ic compile_zsh_configs
 
 .PHONY: setup-env-vars
 setup-env-vars:
