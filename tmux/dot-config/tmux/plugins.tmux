@@ -11,7 +11,6 @@ set -g @plugin "tmux-plugins/tmux-sensible"
 set -g @plugin "wfxr/tmux-fzf-url"
 set -g @plugin "nhdaly/tmux-better-mouse-mode"
 set -g @plugin "jaclu/tmux-menus"
-set -g @plugin "Ataraxy-Labs/opensessions"
 
 # Smart Splits
 set -g @plugin "mrjones2014/smart-splits.nvim"
