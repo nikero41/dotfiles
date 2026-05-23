@@ -17,7 +17,7 @@ pre_sudo = false
 
 # sudo_command = "sudo"
 disable = ["microsoft_office"]
-# first = ["chezmoi"]
+first = ["git_repos"]
 # last = ["system"]
 # ignore_failures = ["powershell"]
 # tmux_arguments = "-S /var/tmux.sock"
