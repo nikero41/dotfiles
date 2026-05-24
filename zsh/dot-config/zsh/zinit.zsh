@@ -23,6 +23,7 @@ zinit wait"0" lucid depth"1" nocd for \
 zinit wait"1" lucid depth"1" nocd for \
 	has"fzf" atload"_evalcache fzf --zsh" Aloxaf/fzf-tab \
 	has"zoxide" atload"_evalcache zoxide init zsh" zdharma-continuum/null \
+	has"wt" atload"_evalcache wt config shell init zsh" zdharma-continuum/null \
 	has"fnm" atload"_evalcache fnm env --use-on-cd" zdharma-continuum/null
 
 zinit wait"2" lucid as"completion" depth"1" for \
