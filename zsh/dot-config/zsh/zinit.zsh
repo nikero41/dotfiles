@@ -5,6 +5,11 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 source "${ZINIT_HOME}/zinit.zsh"
 
+ZSH_GEN_COMPLETIONS_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/generated-completions"
+if [[ -d "$ZSH_GEN_COMPLETIONS_DIR" ]]; then
+	fpath=("$ZSH_GEN_COMPLETIONS_DIR" $fpath)
+fi
+
 zinit depth"1" nocd light-mode for \
 	mroth/evalcache \
 	has"starship" atinit"_evalcache starship init zsh" zdharma-continuum/null \

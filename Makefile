@@ -67,6 +67,8 @@ install-global-npm:
 
 .PHONY: setup-zsh
 setup-zsh:
+	@$(call log,"Generate zsh completions")
+	@zsh -ic generate_zsh_completions
 	@$(call log,"Setting up zsh configuration")
 	@zsh -ic compile_zsh_configs
 

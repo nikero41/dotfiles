@@ -94,3 +94,45 @@ compile_zsh_configs() {
 
 	print -r "zsh compile done"
 }
+
+generate_zsh_completions() {
+	local -A generators=(
+		delta "delta --generate-completion zsh"
+		op "op completion zsh"
+		opencode "opencode completion"
+		ngrok "ngrok completion"
+		spotify_player "spotify_player generate zsh"
+		docker "docker completion zsh"
+		rustup "rustup completions zsh"
+		cargo "rustup completions zsh cargo"
+	)
+
+	local dir="${ZSH_GEN_COMPLETIONS_DIR:-${XDG_CONFIG_HOME:-$HOME/.config}/zsh/generated-completions}"
+
+	mkdir -p "$dir" || return 1
+	(( ${fpath[(Ie)$dir]} == 0 )) && fpath=("$dir" $fpath)
+
+	local cmd out_file generator
+	local -a spec
+
+	for cmd in ${(ok)generators}; do
+		generator="${generators[$cmd]}"
+		if ! command -v "$cmd" >/dev/null 2>&1; then
+			print -r -- "skip: $cmd (not found)"
+			continue
+		fi
+
+		spec=(${(z)generator})
+		out_file="$dir/_$cmd"
+		if ! "${spec[@]}" >| "$out_file" || [[ ! -s "$out_file" ]]; then
+			rm -f -- "$out_file"
+			print -r -- "fail: $cmd"
+			continue
+		fi
+
+		print -r -- "generated: $out_file"
+	done
+
+	rm -f -- "${ZDOTDIR:-$HOME}"/.zcompdump(N) "${ZDOTDIR:-$HOME}"/.zcompdump-*(N)
+	print -r -- "invalidated zsh completion cache"
+}
