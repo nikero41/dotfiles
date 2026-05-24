@@ -32,7 +32,6 @@ zinit wait"1" lucid depth"1" nocd for \
 	has"fnm" atload"_evalcache fnm env --use-on-cd" zdharma-continuum/null
 
 zinit wait"2" lucid as"completion" depth"1" for \
-	has"rustc" OMZP::rust/_rustc \
 	if"[ -s \"$HOME/.bun/_bun\" ]" is-snippet "$HOME/.bun/_bun"
 
 zinit wait"3" lucid depth"1" nocd for \
