@@ -59,6 +59,10 @@ install-global-npm:
 		eas-cli \
 		eslint \
 		eslint_d \
+		prettier \
+		oxlint \
+		oxlint-tsgolint \
+		oxfmt \
 		serve \
 		neovim \
 		prisma \
