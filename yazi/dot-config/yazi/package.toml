@@ -10,7 +10,7 @@ hash = "6ea5f37c7f219671ec504cb8311f889d"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "be524fb"
+rev = "c2c16c8"
 hash = "88e56a64b7ce7c4314427452343fef17"
 
 [[plugin.deps]]
@@ -25,8 +25,8 @@ hash = "e6e98d12b1648d1894c2b560d85eeaa7"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:piper"
-rev = "be524fb"
-hash = "384464b6df8cb807425c521f8cd790f3"
+rev = "c2c16c8"
+hash = "d99cfbc3812e7738505f9e4bedb759cd"
 
 [flavor]
 deps = []
