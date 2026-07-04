@@ -65,6 +65,7 @@ install-global-npm:
 		oxfmt \
 		serve \
 		neovim \
+		port-whisperer \
 		prisma \
 		turbo \
 		typescript
