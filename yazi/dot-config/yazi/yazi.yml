@@ -1,0 +1,32 @@
+base: lua55
+
+globals:
+  ui:
+    any: true
+  ya:
+    any: true
+  cx:
+    any: true
+  fs:
+    any: true
+  ps:
+    any: true
+  rt:
+    any: true
+  th:
+    any: true
+  Command:
+    any: true
+  Url:
+    any: true
+  Path:
+    any: true
+
+  Status:
+    any: true
+  Current:
+    any: true
+  Entity:
+    any: true
+  Linemode:
+    any: true

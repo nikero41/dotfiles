@@ -28,5 +28,10 @@ use = "yazi-rs/plugins:piper"
 rev = "39aaf6d"
 hash = "12126fca34f9f1802bb57b88292f57af"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:types"
+rev = "5d461d8"
+hash = "9105494e98299f392aee95340066da9f"
+
 [flavor]
 deps = []
