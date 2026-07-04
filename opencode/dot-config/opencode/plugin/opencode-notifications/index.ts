@@ -1,9 +1,9 @@
 import type { Plugin } from "@opencode-ai/plugin";
 import type { OpencodeClient } from "@opencode-ai/sdk";
 
-import { focusOpenCode, getTmuxTarget, isVisible } from "./actions.ts";
-import { EventSuppression } from "./eventSuppression.ts";
-import { notify } from "./notify.ts";
+import { focusOpenCode, getTmuxTarget, isVisible } from "./actions.js";
+import { EventSuppression } from "./eventSuppression.js";
+import { notify } from "./notify.js";
 
 const completionSuppression = new EventSuppression();
 

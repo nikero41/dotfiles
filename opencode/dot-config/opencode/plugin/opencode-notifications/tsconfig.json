@@ -1,15 +1,6 @@
 {
 	"compilerOptions": {
-		"target": "ES2022",
-		"lib": ["ES2022", "DOM"],
-		"module": "ESNext",
-		"moduleResolution": "Bundler",
-		"allowImportingTsExtensions": true,
-		"allowSyntheticDefaultImports": true,
-		"esModuleInterop": true,
 		"strict": true,
-		"noEmit": true,
-		"types": ["node"]
-	},
-	"include": ["*.ts", "*.d.ts", "../opencode-notifications.ts"]
+		"noEmit": true
+	}
 }
