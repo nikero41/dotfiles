@@ -67,6 +67,10 @@ export const NotificationsPlugin: Plugin = ({ client, directory, $ }) => {
 					);
 					break;
 				}
+
+				default: {
+					break;
+				}
 			}
 		},
 	});

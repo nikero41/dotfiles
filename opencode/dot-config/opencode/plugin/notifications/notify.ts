@@ -1,5 +1,5 @@
 import { basename } from "path";
-import notifier, { NotificationCallback } from "node-notifier";
+import notifier, { type NotificationCallback } from "node-notifier";
 
 type NotificationInput = {
 	directory: string;
@@ -42,7 +42,7 @@ const notificationBody = (input: NotificationInput) => {
 };
 
 const sanitizeText = (value: string, maxLength: number) => {
-	const normalized = value.replace(/\s+/g, " ").trim();
+	const normalized = value.replaceAll(/\s+/g, " ").trim();
 
 	return normalized.length <= maxLength
 		? normalized

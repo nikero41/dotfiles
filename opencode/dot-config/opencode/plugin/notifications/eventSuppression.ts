@@ -1,4 +1,4 @@
-const COMPLETE_SUPPRESSION_AFTER_ERROR_MS = 5_000;
+const COMPLETE_SUPPRESSION_AFTER_ERROR_MS = 5000;
 
 export class EventSuppression {
 	suppressUntil = new Map<string, number>();
