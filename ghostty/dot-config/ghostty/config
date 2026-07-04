@@ -2,9 +2,9 @@ shell-integration-features = "no-cursor,sudo"
 bell-features = title,system,attention,border,audio
 
 # Font
-font-family = "FiraCode Nerd Font Med"
+font-family = "JetBrainsMono Nerd Font Med"
 font-size = 13
-adjust-cell-height = 6
+adjust-cell-height = 7
 font-thicken = true
 adjust-underline-position = 5
 adjust-underline-thickness = 1
