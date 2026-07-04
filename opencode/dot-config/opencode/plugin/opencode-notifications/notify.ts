@@ -28,8 +28,6 @@ export const notify = (
 			message: notificationBody(input),
 			sound: true,
 			wait: true,
-			// // @ts-expect-error - the underlying macOS notifier supports grouping
-			// group: `opencode:${input.kind}:${input.sessionId ?? "global"}`,
 		},
 		callback,
 	);
