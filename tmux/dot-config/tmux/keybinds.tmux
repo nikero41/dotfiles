@@ -18,8 +18,8 @@ set -g @lazygit_popup_cmd 'tmux popup -d "#{pane_current_path}" -E -w 90% -h 90%
 bind -N "Lazygit" g run-shell "#{@lazygit_popup_cmd}"
 bind -N "Spotify" m run-shell \
   'tmux popup -d "#{pane_current_path}" -E -w 90% -h 90% -T Spotify spotify_player'
-# bind -N "File manager" f run-shell \
-#   'tmux popup -d "#{pane_current_path}" -E -w 90% -h 90% -T "File manager" yazi'
+bind -N "File manager" f run-shell \
+  'tmux popup -d "#{pane_current_path}" -E -w 90% -h 90% -T "File manager" yazi'
 bind -N "Activity monitor" b run-shell \
   'tmux popup -E -w 90% -h 90% -T Activity btop'
 bind C-Space run-shell "$TMUX_PLUGIN_MANAGER_PATH/tmux-palette/bin/tmux-palette.sh"
