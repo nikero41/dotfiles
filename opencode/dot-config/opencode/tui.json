@@ -1,11 +1,11 @@
 {
-  "$schema": "https://opencode.ai/tui.json",
-  "theme": "catppuccin",
-  "scroll_acceleration": {
-    "enabled": true
-  },
-  "keybinds": {
-    "session_child_cycle": "ctrl+alt+l",
-    "session_child_cycle_reverse": "ctrl+alt+h"
-  }
+	"$schema": "https://opencode.ai/tui.json",
+	"theme": "catppuccin",
+	"scroll_acceleration": {
+		"enabled": true
+	},
+	"keybinds": {
+		"session_child_cycle": "ctrl+alt+l",
+		"session_child_cycle_reverse": "ctrl+alt+h"
+	}
 }

@@ -1,16 +1,15 @@
 {
-  "$schema": "https://opencode.ai/config.json",
-  "share": "manual",
-  "tools": {},
-  "default_agent": "plan",
-  "permission": {
-    "edit": "ask",
-    "bash": {
-      "*": "allow",
-      "git push": "deny",
-      "npm *": "ask",
-      "rm -rf": "deny",
-    },
-  },
-  "plugin": ["@mohak34/opencode-notifier@latest"],
+	"$schema": "https://opencode.ai/config.json",
+	"share": "manual",
+	"tools": {},
+	"default_agent": "plan",
+	"permission": {
+		"edit": "ask",
+		"bash": {
+			"*": "allow",
+			"git push": "deny",
+			"npm *": "ask",
+			"rm -rf": "deny",
+		},
+	},
 }
