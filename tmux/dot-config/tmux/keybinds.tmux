@@ -26,7 +26,7 @@ bind C-Space run-shell "$TMUX_PLUGIN_MANAGER_PATH/tmux-palette/bin/tmux-palette.
 
 unbind P
 bind -N "pet" P run-shell \
-  'tmux popup -E -w 90% -h 90% -T Activity "pet search | xargs -I _ tmux send-keys -l -t #S.#{pane_id} _"'
+  'tmux popup -E -w 90% -h 90% -T Activity "pet search | xargs -I _ tmux send-keys -l -t #{pane_id} _"'
 
 bind -n MouseDown1Status {
   if -F "#{==:#{mouse_status_range},session}" {
