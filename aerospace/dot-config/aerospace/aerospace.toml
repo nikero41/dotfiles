@@ -1,3 +1,5 @@
+config-version = 2
+
 # You can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
@@ -244,36 +246,34 @@ S = ['built-in', 'secondary']
 B = ['built-in', 'secondary']
 
 [[on-window-detected]]
-if.app-id = 'com.mitchellh.ghostty'
+if = 'test %{app-bundle-id} = com.mitchellh.ghostty'
 run = 'move-node-to-workspace T'
 
 [[on-window-detected]]
-if.app-id = 'com.spotify.client'
+if = 'test %{app-bundle-id} = com.spotify.client'
 run = 'move-node-to-workspace S'
 
 [[on-window-detected]]
-if.app-id = 'com.microsoft.teams2'
+if = 'test %{app-bundle-id} = com.microsoft.teams2'
 run = 'move-node-to-workspace Q'
 
 [[on-window-detected]]
-if.app-id = 'com.microsoft.Outlook'
+if = 'test %{app-bundle-id} = com.microsoft.Outlook'
 run = 'move-node-to-workspace Q'
 
 # Floating windows
 [[on-window-detected]]
-if.app-id = 'com.apple.FaceTime'
+if = 'test %{app-bundle-id} = com.apple.FaceTime'
 run = 'layout floating'
 
 [[on-window-detected]]
-if.app-id = 'com.riotgames.RiotGames.RiotClient'
+if = 'test %{app-bundle-id} = com.riotgames.RiotGames.RiotClient'
 run = 'layout floating'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'Android Studio'
-if.window-title-regex-substring = 'Device Manager'
+if = 'test %{window-title} ~= "Device Manager" && test %{app-name} ~= "Android Studio"'
 run = 'layout floating'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'Wispr Fow'
-if.window-title-regex-substring = 'Status'
+if = 'test %{window-title} ~= Status && test %{app-name} ~= "Wispr Flow"'
 run = 'layout floating'
