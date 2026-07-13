@@ -23,6 +23,6 @@ set -g @status-command "\
 #[bg=default#,fg=#{@thm_maroon}] #{pane_current_command}\
 }"
 
-set -g @status-window-name "\
+set -g @status-window-label "\
 #I#{?#{!=:#{window_name},},: ,}\
 #{window_name}"
