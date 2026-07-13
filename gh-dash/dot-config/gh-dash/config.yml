@@ -117,8 +117,6 @@ theme:
     table:
       showSeparator: true
       compact: false
-pager:
-  diff: "diffnav"
 confirmQuit: false
 showAuthorIcons: true
 smartFilteringAtLaunch: true

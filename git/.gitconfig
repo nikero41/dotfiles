@@ -4,11 +4,10 @@ name = Stavros Nikoletopoulos
 
 [core]
 editor = nvim
-pager = delta
 
 [pager]
-diff = diffnav
-show = diffnav
+diff = hunk pager
+show = hunk pager
 log = delta
 reflog = delta
 
