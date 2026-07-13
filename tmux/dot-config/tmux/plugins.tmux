@@ -11,10 +11,6 @@ set -g @plugin "tmux-plugins/tmux-sensible"
 set -g @plugin "wfxr/tmux-fzf-url"
 set -g @plugin "nhdaly/tmux-better-mouse-mode"
 
-# Palette
-set -g @plugin "eduwass/tmux-palette"
-set -g @palette-key "off"
-
 # Smart Splits
 set -g @plugin "mrjones2014/smart-splits.nvim"
 set -g @smart-splits_resize_left_key  ""
