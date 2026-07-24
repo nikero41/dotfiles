@@ -63,7 +63,9 @@ export const NotificationsPlugin: Plugin = ({ client, directory, $ }) => {
 							sessionId,
 							title: await sessionTitle(client, sessionId),
 						},
-						() => focusOpenCode($, tmuxTarget),
+						(_error, response) => {
+							if (response === "activate") return focusOpenCode($, tmuxTarget);
+						},
 					);
 					break;
 				}
