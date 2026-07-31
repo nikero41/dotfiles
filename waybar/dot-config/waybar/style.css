@@ -70,12 +70,8 @@ window#waybar {
 	color: @red;
 }
 
-#battery.critical {
+#battery.warning {
 	color: @peach;
-}
-
-#battery.critical {
-	color: @green;
 }
 
 #battery.charging {
