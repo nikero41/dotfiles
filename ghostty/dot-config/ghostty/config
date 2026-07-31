@@ -1,4 +1,4 @@
-shell-integration-features = "no-cursor,sudo"
+shell-integration-features = no-cursor,sudo,ssh-terminfo,ssh-env
 bell-features = title,system,attention,border,audio
 
 # Font
