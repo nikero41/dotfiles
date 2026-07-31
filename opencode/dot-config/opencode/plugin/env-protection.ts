@@ -6,9 +6,9 @@ export const EnvProtection: Plugin = () =>
 			if (
 				input.tool === "read" &&
 				hasFilePath(output.args) &&
-				output.args.filePath.includes(".env")
+				isProtectedEnvFile(output.args.filePath)
 			) {
-				throw new Error("Do not read .env files");
+				throw new Error("Do not read protected .env files");
 			}
 			return Promise.resolve();
 		},
@@ -18,5 +18,8 @@ const hasFilePath = (args: unknown): args is { filePath: string } =>
 	!!args &&
 	typeof args === "object" &&
 	"filePath" in args &&
-	!args.filePath &&
 	typeof args.filePath === "string";
+
+const isProtectedEnvFile = (filePath: string) =>
+	!/(?:^|[\\/])\.env\.(?:sample|example)$/.test(filePath) &&
+	/(?:^|[\\/])\.env(?:\.[^/\\]*)?$/.test(filePath);
