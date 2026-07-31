@@ -28,14 +28,13 @@ export const NotificationsPlugin: Plugin = ({ client, directory, $ }) => {
 			const now = Date.now();
 			completionSuppression.cleanup(now);
 
-			const tmuxTarget = await getTmuxTarget($);
-
 			switch (event.type) {
 				case "session.error": {
 					if (event.properties.error?.name === "MessageAbortedError") return;
 
 					const sessionId = event.properties.sessionID;
 					if (sessionId) completionSuppression.suppressNext(sessionId, now);
+					const tmuxTarget = await getTmuxTarget($);
 					if (await isVisible($, tmuxTarget)) return;
 
 					notify(
@@ -54,6 +53,7 @@ export const NotificationsPlugin: Plugin = ({ client, directory, $ }) => {
 				case "session.idle": {
 					const sessionId = event.properties.sessionID;
 					if (completionSuppression.shouldSuppress(sessionId, now)) return;
+					const tmuxTarget = await getTmuxTarget($);
 					if (await isVisible($, tmuxTarget)) return;
 
 					notify(
