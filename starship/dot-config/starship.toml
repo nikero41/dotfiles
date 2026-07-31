@@ -134,7 +134,7 @@ format = ' [$symbol ($version)]($style)'
 format = ' [$symbol $branch]($style)'
 
 [fossil_metrics]
-format = ' [+$added]($added_style)\]\[[-$deleted]($deleted_style)'
+format = ' [+$added]($added_style) [-$deleted]($deleted_style)'
 
 [gcloud]
 format = ' [$symbol $account(@$domain)(\($region\))]($style)'
