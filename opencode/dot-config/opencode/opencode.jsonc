@@ -5,6 +5,7 @@
 	"default_agent": "plan",
 	"permission": {
 		"edit": "ask",
+		"todowrite": "allow",
 		"bash": {
 			"*": "allow",
 			"git push": "deny",
