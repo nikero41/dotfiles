@@ -12,6 +12,14 @@ bind -N "Clear history" C-c send-keys C-l
 bind -N "New window" c new-window -c "#{pane_current_path}"
 bind -N "Vertical split" v split-window -v -c "#{pane_current_path}"
 bind -N "Horizontal split" h split-window -h -c "#{pane_current_path}"
+bind -N "Toggle vertical layouts" / if-shell -F \
+  '#{==:#{@toggle_layout},main-vertical}' {
+    select-layout even-horizontal
+    set -g @toggle_layout even-horizontal
+  } {
+    select-layout main-vertical
+    set -g @toggle_layout main-vertical
+  }
 
 # popups
 set -g @lazygit_popup_cmd 'tmux popup -d "#{pane_current_path}" -E -w 90% -h 90% -T Git lazygit'
