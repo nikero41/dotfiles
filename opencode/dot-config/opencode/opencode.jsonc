@@ -3,6 +3,7 @@
 	"share": "manual",
 	"tools": {},
 	"default_agent": "plan",
+	"lsp": true,
 	"permission": {
 		"edit": "ask",
 		"todowrite": "allow",
