@@ -3,6 +3,7 @@
 	"share": "manual",
 	"tools": {},
 	"default_agent": "plan",
+	"instructions": ["TODO_POLICY.md"],
 	"lsp": true,
 	"permission": {
 		"read": {
