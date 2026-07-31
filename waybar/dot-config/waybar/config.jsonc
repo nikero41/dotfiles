@@ -76,7 +76,7 @@
 		"tooltip-format-disconnected": "Disconnected",
 		"tooltip-format-wifi": "{essid} ({signalStrength}%)",
 		"tooltip-format-ethernet": "{ifname} 🖧 ",
-		"on-click": "kitty nmtui", // TODO: add an other program
+		"on-click": "ghostty -e nmtui",
 	},
 	"bluetooth": {
 		"format-on": "󰂯",
