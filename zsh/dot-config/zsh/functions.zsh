@@ -110,7 +110,7 @@ generate_zsh_completions() {
 	local dir="${ZSH_GEN_COMPLETIONS_DIR:-${XDG_CONFIG_HOME:-$HOME/.config}/zsh/generated-completions}"
 
 	mkdir -p "$dir" || return 1
-	(( ${fpath[(Ie)$dir]} == 0 )) && fpath=("$dir" $fpath)
+	((${fpath[(Ie)$dir]} == 0)) && fpath=("$dir" $fpath)
 
 	local cmd out_file generator
 	local -a spec
@@ -124,7 +124,7 @@ generate_zsh_completions() {
 
 		spec=(${(z)generator})
 		out_file="$dir/_$cmd"
-		if ! "${spec[@]}" >| "$out_file" || [[ ! -s "$out_file" ]]; then
+		if ! "${spec[@]}" >|"$out_file" || [[ ! -s "$out_file" ]]; then
 			rm -f -- "$out_file"
 			print -r -- "fail: $cmd"
 			continue
