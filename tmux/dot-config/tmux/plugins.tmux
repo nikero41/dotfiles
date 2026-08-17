@@ -126,6 +126,7 @@ set -gF @thumbs-multi-fg-color "#{@thm_green}"
 set -g @thumbs-contrast 1
 set -g @thumbs-command 'echo -n {} | pbcopy'
 
-run "#{TMUX_PLUGIN_MANAGER_PATH}/tmux-thumbs/tmux-thumbs.tmux"
+if-shell "test -f '#{TMUX_PLUGIN_MANAGER_PATH}/tmux-thumbs/tmux-thumbs.tmux'" \
+  "run '#{TMUX_PLUGIN_MANAGER_PATH}/tmux-thumbs/tmux-thumbs.tmux'"
 
 run "#{TMUX_PLUGIN_MANAGER_PATH}/tpm/tpm"
