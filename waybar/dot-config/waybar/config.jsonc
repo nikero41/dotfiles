@@ -8,7 +8,6 @@
 	"modules-left": ["hyprland/workspaces"],
 	"modules-center": ["hyprland/window", "custom/music"],
 	"modules-right": [
-		// "custom/colorpicker",
 		// "cpu",
 		// "memory",
 		// "temperature",
@@ -16,9 +15,9 @@
 
 		"group/expand",
 		"hyprland/language",
-		"battery",
 		"bluetooth",
 		"network",
+		"battery",
 		"custom/notification",
 		"clock",
 	],

@@ -2,30 +2,19 @@
 
 window#waybar {
 	background-color: transparent;
+	color: @text;
 }
-
-/* test gtk theme */
-/* window#waybar { */
-/*     background: @theme_base_color; */
-/*     border-bottom: 1px solid @unfocused_borders; */
-/*     color: @theme_text_color; */
-/* } */
 
 .modules-left,
 .modules-center,
 .modules-right {
-	background-color: @surface0;
-	border-radius: 18px;
-	color: @text;
-	padding: 0px 12px;
+	background-color: @base;
+	border-radius: 12px;
+	padding: 10px 14px;
 }
 
 .modules-left {
-	padding: 0px 4px;
-}
-
-.modules-center {
-	padding: 0px 12px;
+	padding: 0 4px;
 }
 
 .modules-center > widget:not(:first-child) > * {
@@ -33,7 +22,7 @@ window#waybar {
 }
 
 .modules-right > widget:not(:first-child) > * {
-	margin-left: 28px;
+	margin-left: 21px;
 }
 
 .drawer-child > * {
@@ -42,6 +31,7 @@ window#waybar {
 
 #workspaces button {
 	color: @text;
+	border: transparent 0px solid;
 }
 
 #workspaces button:hover {
@@ -50,16 +40,14 @@ window#waybar {
 	text-shadow: inherit;
 	background-color: inherit;
 	background: transparent;
-	border: transparent 1px solid;
 }
 
 #workspaces button.visible {
-	background-color: @base;
-	color: @mauve;
-	border-radius: 18px;
-	padding: 0 12px;
-	margin: 0 -4px;
-	border: transparent 1px solid;
+	color: @peach;
+}
+
+#language {
+	margin-bottom: 2px;
 }
 
 #custom-music {
@@ -96,4 +84,8 @@ window#waybar {
 
 #network.disconnected {
 	color: @red;
+}
+
+#clock {
+	color: @mauve;
 }
