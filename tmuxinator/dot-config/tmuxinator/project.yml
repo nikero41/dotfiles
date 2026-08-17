@@ -1,6 +1,6 @@
 ---
 name: project
-root: "<%= @args[0] %>"
+root: "<%= @args.fetch(0) { raise ArgumentError, 'Usage: tmuxinator start project <path>' } %>"
 
 windows:
   - editor:
