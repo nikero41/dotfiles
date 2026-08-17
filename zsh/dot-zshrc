@@ -24,4 +24,8 @@ source "$CONFIG/aliases.zsh"
 source "$CONFIG/functions.zsh"
 source "$CONFIG/keybinds.zsh"
 
+if [[ -f "$HOME/.config/op/plugins.sh" ]]; then
+  source "$HOME/.config/op/plugins.sh"
+fi
+
 source "$CONFIG/polish.zsh"
