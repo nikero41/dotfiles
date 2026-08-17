@@ -12,6 +12,14 @@ bind -N "Clear history" C-c send-keys C-l
 bind -N "New window" c new-window -c "#{pane_current_path}"
 bind -N "Vertical split" v split-window -v -c "#{pane_current_path}"
 bind -N "Horizontal split" h split-window -h -c "#{pane_current_path}"
+bind -N "Toggle vertical layouts" / if-shell -F \
+  '#{==:#{@toggle_layout},main-vertical}' {
+    select-layout even-horizontal
+    set -g @toggle_layout even-horizontal
+  } {
+    select-layout main-vertical
+    set -g @toggle_layout main-vertical
+  }
 
 # popups
 set -g @lazygit_popup_cmd 'tmux popup -d "#{pane_current_path}" -E -w 90% -h 90% -T Git lazygit'
@@ -20,9 +28,8 @@ bind -N "Spotify" m run-shell \
   'tmux popup -d "#{pane_current_path}" -E -w 90% -h 90% -T Spotify spotify_player'
 bind -N "File manager" f run-shell \
   'tmux popup -d "#{pane_current_path}" -E -w 90% -h 90% -T "File manager" yazi'
-bind -N "Activity monitor" b run-shell \
+bind -N "Activity monitor" a run-shell \
   'tmux popup -E -w 90% -h 90% -T Activity btop'
-bind C-Space run-shell "$TMUX_PLUGIN_MANAGER_PATH/tmux-palette/bin/tmux-palette.sh"
 
 unbind P
 bind -N "pet" P run-shell \

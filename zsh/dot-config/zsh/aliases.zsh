@@ -16,6 +16,7 @@ alias oc="opencode --port"
 
 # git
 alias groot="cd \"\$(git rev-parse --show-toplevel)\""
+alias ghs="gh stack"
 
 # eza
 alias ls="eza --group-directories-first --icons --oneline"

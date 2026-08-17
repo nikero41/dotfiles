@@ -1,27 +1,31 @@
 CONFIG="$HOME/.config/zsh"
 
 if [ -e "$CONFIG/env.zsh" ]; then
-	source "$CONFIG/env.zsh"
+  source "$CONFIG/env.zsh"
 else
-	echo "Missing environment file: $CONFIG/env.zsh"
+  echo "Missing environment file: $CONFIG/env.zsh"
 fi
 
 source "$CONFIG/init.zsh"
 for file in "$CONFIG"/*.zsh; do
-	if [[ 
-		"$file" == "$CONFIG/env.zsh" ||
-		"$file" == "$CONFIG/init.zsh" ||
-		"$file" == "$CONFIG/aliases.zsh" ||
-		"$file" == "$CONFIG/functions.zsh" ||
-		"$file" == "$CONFIG/polish.zsh" ||
-		"$file" == "$CONFIG/keybinds.zsh" ]] \
-		; then
-		continue
-	fi
-	source "$file"
+  if [[ 
+    "$file" == "$CONFIG/env.zsh" ||
+    "$file" == "$CONFIG/init.zsh" ||
+    "$file" == "$CONFIG/aliases.zsh" ||
+    "$file" == "$CONFIG/functions.zsh" ||
+    "$file" == "$CONFIG/polish.zsh" ||
+    "$file" == "$CONFIG/keybinds.zsh" ]] \
+    ; then
+    continue
+  fi
+  source "$file"
 done
 source "$CONFIG/aliases.zsh"
 source "$CONFIG/functions.zsh"
 source "$CONFIG/keybinds.zsh"
+
+if [[ -f "$HOME/.config/op/plugins.sh" ]]; then
+  source "$HOME/.config/op/plugins.sh"
+fi
 
 source "$CONFIG/polish.zsh"

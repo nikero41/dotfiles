@@ -1,7 +1,7 @@
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
-[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+[ ! -d "$ZINIT_HOME" ] && mkdir -p "$(dirname "$ZINIT_HOME")"
+[ ! -d "$ZINIT_HOME"/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 
 source "${ZINIT_HOME}/zinit.zsh"
 
@@ -21,9 +21,9 @@ zinit wait"0" lucid depth"1" for \
 zinit wait"0" lucid depth"1" nocd for \
 	hlissner/zsh-autopair \
 	zsh-users/zsh-history-substring-search \
- 	atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" atclone"fast-theme XDG:catppuccin-mocha" atpull"%atclone" zdharma-continuum/fast-syntax-highlighting \
- 	blockf atclone"zinit creinstall -q ." atpull"%atclone" zsh-users/zsh-completions \
- 	atload"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions
+	atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" atclone"fast-theme XDG:catppuccin-mocha" atpull"%atclone" zdharma-continuum/fast-syntax-highlighting \
+	blockf atclone"zinit creinstall -q ." atpull"%atclone" zsh-users/zsh-completions \
+	atload"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions
 
 zinit wait"1" lucid depth"1" nocd for \
 	has"fzf" atload"_evalcache fzf --zsh" Aloxaf/fzf-tab \

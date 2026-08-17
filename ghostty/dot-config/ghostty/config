@@ -1,11 +1,15 @@
-shell-integration-features = "no-cursor,sudo"
+shell-integration-features = no-cursor,sudo,ssh-terminfo,ssh-env
 bell-features = title,system,attention,border,audio
 
 # Font
-font-family = "JetBrainsMono Nerd Font Med"
+font-family = "JetBrainsMono Nerd Font"
+font-family-bold = "JetBrainsMono Nerd Font"
+font-family-italic = "JetBrainsMono Nerd Font"
+font-family-bold-italic = "JetBrainsMono Nerd Font"
 font-size = 13
 adjust-cell-height = 7
 font-thicken = true
+font-thicken-strength = 64
 adjust-underline-position = 5
 adjust-underline-thickness = 1
 

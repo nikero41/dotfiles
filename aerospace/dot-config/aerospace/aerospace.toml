@@ -1,3 +1,5 @@
+config-version = 2
+
 # You can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
@@ -37,11 +39,7 @@ on-focused-monitor-changed = [
   'exec-and-forget aerospace move-mouse window-lazy-center || aerospace move-mouse monitor-lazy-center',
 ]
 
-exec-on-workspace-change = [
-  '/bin/bash',
-  '-c',
-  '~/.config/aerospace/wispr-move.sh',
-]
+exec-on-workspace-change = ['/bin/bash', '-c', '~/.config/aerospace/wispr-move.sh']
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
@@ -204,15 +202,9 @@ alt-shift-esc = 'mode break'
 [mode.apps.binding]
 esc = 'mode main'
 t = ['exec-and-forget open -a /Applications/Ghostty.app', 'mode main']
-f = [
-  'exec-and-forget open -a /System/Library/CoreServices/Finder.app',
-  'mode main',
-]
+f = ['exec-and-forget open -a /System/Library/CoreServices/Finder.app', 'mode main']
 z = ['exec-and-forget open -a /Applications/Zen.app', 'mode main']
-q = [
-  'exec-and-forget open -a "/System/Applications/QuickTime Player.app"',
-  'mode main',
-]
+q = ['exec-and-forget open -a "/System/Applications/QuickTime Player.app"', 'mode main']
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -220,10 +212,7 @@ q = [
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 b = ['balance-sizes', 'mode main']
-f = [
-  'layout floating tiling',
-  'mode main',
-] # Toggle between floating and tiling layout
+f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
 
 # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
 # s = ['layout sticky tiling', 'mode main']
@@ -244,36 +233,34 @@ S = ['built-in', 'secondary']
 B = ['built-in', 'secondary']
 
 [[on-window-detected]]
-if.app-id = 'com.mitchellh.ghostty'
+if = 'test %{app-bundle-id} = com.mitchellh.ghostty'
 run = 'move-node-to-workspace T'
 
 [[on-window-detected]]
-if.app-id = 'com.spotify.client'
+if = 'test %{app-bundle-id} = com.spotify.client'
 run = 'move-node-to-workspace S'
 
 [[on-window-detected]]
-if.app-id = 'com.microsoft.teams2'
+if = 'test %{app-bundle-id} = com.microsoft.teams2'
 run = 'move-node-to-workspace Q'
 
 [[on-window-detected]]
-if.app-id = 'com.microsoft.Outlook'
+if = 'test %{app-bundle-id} = com.microsoft.Outlook'
 run = 'move-node-to-workspace Q'
 
 # Floating windows
 [[on-window-detected]]
-if.app-id = 'com.apple.FaceTime'
+if = 'test %{app-bundle-id} = com.apple.FaceTime'
 run = 'layout floating'
 
 [[on-window-detected]]
-if.app-id = 'com.riotgames.RiotGames.RiotClient'
+if = 'test %{app-bundle-id} = com.riotgames.RiotGames.RiotClient'
 run = 'layout floating'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'Android Studio'
-if.window-title-regex-substring = 'Device Manager'
+if = 'test %{window-title} ~= "Device Manager" && test %{app-name} ~= "Android Studio"'
 run = 'layout floating'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'Wispr Fow'
-if.window-title-regex-substring = 'Status'
+if = 'test %{window-title} ~= Status && test %{app-name} ~= "Wispr Flow"'
 run = 'layout floating'

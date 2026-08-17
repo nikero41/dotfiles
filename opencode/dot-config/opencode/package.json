@@ -4,15 +4,18 @@
     "fmt": "oxfmt"
   },
   "dependencies": {
-    "@opencode-ai/plugin": "1.17.11",
+    "@opencode-ai/plugin": "^1.18.4",
     "node-notifier": "^10.0.1"
   },
   "devDependencies": {
     "@types/node": "^25.6.0",
     "@types/node-notifier": "^8.0.5",
-    "oxfmt": "^0.57.0",
-    "oxlint": "^1.72.0",
-    "oxlint-tsgolint": "^0.24.0",
+    "oxfmt": "^0.60.0",
+    "oxlint": "^1.75.0",
+    "oxlint-tsgolint": "^7.0.2001",
     "typescript": "^6.0.2"
+  },
+  "allowScripts": {
+    "msgpackr-extract@3.0.4": true
   }
 }

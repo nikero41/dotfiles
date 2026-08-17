@@ -5,7 +5,7 @@ zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 FZF_TAB_GROUP_COLORS=($'\033[34m' $'\033[93m' $'\033[95m' $'\033[96m' $'\033[91m')
-zstyle ':fzf-tab:*' group-colors $FZF_TAB_GROUP_COLORS
+zstyle ':fzf-tab:*' group-colors "$FZF_TAB_GROUP_COLORS"
 zstyle ':fzf-tab:*' single-group color
 zstyle ':fzf-tab:*' switch-group '<' '>'
 
