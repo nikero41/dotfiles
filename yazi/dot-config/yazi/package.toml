@@ -10,8 +10,8 @@ hash = "6ea5f37c7f219671ec504cb8311f889d"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "b9598e6"
-hash = "ce259b12c503a33a18a861052fa582b7"
+rev = "3f2b882"
+hash = "336548d9f67926e12d5584f60b790f1"
 
 [[plugin.deps]]
 use = "imsi32/yatline-githead"
@@ -25,12 +25,12 @@ hash = "e6e98d12b1648d1894c2b560d85eeaa7"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:piper"
-rev = "b9598e6"
+rev = "3f2b882"
 hash = "f23ecc89ce0f9eeefdd4cea14e2a9ba7"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:types"
-rev = "b9598e6"
+rev = "3f2b882"
 hash = "9105494e98299f392aee95340066da9f"
 
 [flavor]
