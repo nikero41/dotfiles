@@ -7,5 +7,6 @@
 	"keybinds": {
 		"session_child_cycle": "ctrl+alt+l",
 		"session_child_cycle_reverse": "ctrl+alt+h"
-	}
+	},
+	"attention": { "enabled": true }
 }
