@@ -4,13 +4,13 @@
     "fmt": "oxfmt"
   },
   "dependencies": {
-    "@opencode-ai/plugin": "^1.18.4",
+    "@opencode-ai/plugin": "1.18.25",
     "node-notifier": "^10.0.1"
   },
   "devDependencies": {
     "@types/node": "^25.6.0",
     "@types/node-notifier": "^8.0.5",
-    "oxfmt": "^0.60.0",
+    "oxfmt": "^0.65.0",
     "oxlint": "^1.75.0",
     "oxlint-tsgolint": "^7.0.2001",
     "typescript": "^6.0.2"
