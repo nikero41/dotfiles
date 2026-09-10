@@ -124,7 +124,9 @@ set -gF @thumbs-hint-fg-color "#{@thm_peach}"
 set -gF @thumbs-select-fg-color "#{@thm_red}"
 set -gF @thumbs-multi-fg-color "#{@thm_green}"
 set -g @thumbs-contrast 1
-set -g @thumbs-command 'echo -n {} | pbcopy'
+if-shell '[ "$(uname -s)" = Darwin ]' \
+  'set -g @thumbs-command "echo -n {} | pbcopy"' \
+  'set -g @thumbs-command "echo -n {} | wl-copy"'
 
 if-shell "test -f '#{TMUX_PLUGIN_MANAGER_PATH}/tmux-thumbs/tmux-thumbs.tmux'" \
   "run '#{TMUX_PLUGIN_MANAGER_PATH}/tmux-thumbs/tmux-thumbs.tmux'"
