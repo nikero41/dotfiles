@@ -46,6 +46,7 @@ brew "pipx"
 brew "presenterm"
 brew "ripgrep"
 brew "rust"
+brew "rustup"
 # CLI search and replace | Space Age seD
 brew "sad"
 brew "spotifyd"
@@ -71,7 +72,7 @@ brew "jorgerojas26/lazysql/lazysql", trusted: true
 brew "knqyf263/pet/pet", trusted: true
 cask "1password-cli"
 cask "nikitabobko/tap/aerospace", trusted: true
-# cask "android-studio"
+cask "android-studio"
 cask "betterdisplay"
 cask "caskhub"
 cask "font-fira-code-nerd-font"

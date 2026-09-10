@@ -2,13 +2,22 @@ define log
 	printf "\n\e[1;34m====> %s <====\e[0m\n\n" $(1);
 endef
 
+STOW_PACKAGES := $(filter-out launchagents/,$(wildcard */))
+
 .PHONY: all
-all: link setup-homebrew install-packages setup-tmux setup-yazi install-node install-global-npm setup-env-vars setup-zsh
+all: link setup-launchagents setup-homebrew install-packages setup-tmux setup-yazi install-node install-global-npm setup-env-vars setup-zsh
 
 .PHONY: link
 link:
 	@$(call log,"Setting up dotfiles")
-	@stow */
+	@stow $(STOW_PACKAGES)
+	@stow --no-folding launchagents
+
+.PHONY: setup-launchagents
+setup-launchagents: link
+	@$(call log,"Setting up launch agents")
+	@launchctl bootout gui/$$(id -u)/com.snikoletopoulos.aerospace-league-focus-toggle 2>/dev/null || true
+	@launchctl bootstrap gui/$$(id -u) "$${HOME}/Library/LaunchAgents/com.snikoletopoulos.aerospace-league-focus-toggle.plist"
 
 .PHONY: setup-homebrew
 setup-homebrew:
