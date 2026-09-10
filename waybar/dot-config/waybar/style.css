@@ -1,8 +1,8 @@
 @import "mocha.css";
 
 window#waybar {
-	background-color: transparent;
-	color: @text;
+  background-color: transparent;
+  color: @text;
 }
 
 .modules-left,
@@ -10,78 +10,197 @@ window#waybar {
 .modules-right {
 	background-color: @base;
 	border-radius: 12px;
-	padding: 10px 14px;
+  padding: 8px 12px;
 }
 
 .modules-left {
-	padding: 0 4px;
+  padding: 4px;
 }
 
-.modules-center > widget:not(:first-child) > * {
-	margin-left: 12px;
+#waybar.empty .modules-center {
+	background-color: transparent;
+	padding: 0;
 }
 
-.modules-right > widget:not(:first-child) > * {
-	margin-left: 21px;
-}
-
-.drawer-child > * {
-	margin-left: 18px;
+#waybar.empty #custom-music {
+	background-color: @base;
+	border-radius: 12px;
+  padding: 8px 12px;
 }
 
 #workspaces button {
-	color: @text;
+	border-radius: 6px;
 	border: transparent 0px solid;
+	color: @overlay1;
+	margin: 0 2px;
+	padding: 0 8px;
 }
 
 #workspaces button:hover {
-	color: @blue;
-	box-shadow: inherit;
-	text-shadow: inherit;
-	background-color: inherit;
-	background: transparent;
+	background-color: @surface0;
+	color: @text;
+}
+
+#workspaces button.active {
+	background-color: transparent;
+	color: @mauve;
+}
+
+#workspaces button.active:hover {
+	background-color: transparent;
+	color: @mauve;
 }
 
 #workspaces button.visible {
-	color: @peach;
+	color: @text;
 }
 
-#language {
-	margin-bottom: 2px;
+#workspaces button.empty {
+	color: @overlay0;
+}
+
+#workspaces button.urgent {
+	background-color: @red;
+	color: @base;
+}
+
+#language,
+#bluetooth,
+#network,
+#power-profiles-daemon,
+#battery,
+#custom-notification,
+#idle_inhibitor,
+#clock,
+#custom-music,
+#custom-power,
+#custom-expand {
+  border-radius: 6px;
+  padding: 3px 8px;
+}
+
+#language:hover,
+#bluetooth:hover,
+#network:hover,
+#power-profiles-daemon:hover,
+#battery:hover,
+#custom-notification:hover,
+#idle_inhibitor:hover,
+#clock:hover,
+#custom-music:hover,
+#custom-power:hover,
+#custom-expand:hover {
+  background-color: @surface0;
 }
 
 #custom-music {
-	color: @mauve;
+  color: @mauve;
+}
+
+#custom-music.playing {
+  color: @green;
+}
+
+#custom-music.paused {
+  color: @subtext0;
+}
+
+#custom-music.stopped {
+  color: @overlay0;
 }
 
 #battery.critical {
-	color: @red;
+  color: @red;
+}
+
+#battery.good,
+#battery.full {
+  color: @green;
 }
 
 #battery.warning {
-	color: @peach;
+  color: @peach;
 }
 
 #battery.charging {
-	color: @yellow;
+  color: @yellow;
 }
 
 #bluetooth {
-	color: @blue;
+  color: @blue;
+}
+
+#bluetooth.connected {
+	color: @sapphire;
+}
+
+#bluetooth,
+#power-profiles-daemon,
+#custom-notification {
+	box-shadow: inset 1px 0 @surface1;
 }
 
 #network {
-	color: @green;
+  color: @green;
+}
+
+#network.ethernet {
+  color: @teal;
+}
+
+#network.linked {
+  color: @peach;
 }
 
 #network.disabled {
-	color: @mauve;
+  color: @mauve;
 }
 
 #network.disconnected {
-	color: @red;
+  color: @red;
+}
+
+#power-profiles-daemon {
+	color: @mauve;
+}
+
+#custom-notification {
+  color: @blue;
+  padding-left: 8px;
+  padding-right: 10px;
+  /* min-width: 18px; */
+}
+
+#custom-notification.dnd,
+#custom-notification.dnd-notification,
+#custom-notification.dnd-none {
+  color: @peach;
+}
+
+#custom-notification.inhibited,
+#custom-notification.inhibited-notification,
+#custom-notification.inhibited-none {
+	color: @overlay1;
+}
+
+#idle_inhibitor.deactivated {
+	color: @overlay1;
+}
+
+#idle_inhibitor.activated {
+	color: @mauve;
+}
+
+#expand:hover #custom-expand {
+	color: @mauve;
 }
 
 #clock {
-	color: @mauve;
+  color: @mauve;
+  font-feature-settings: "tnum";
+}
+
+#custom-power {
+  border-left: 1px solid @surface1;
+  color: @red;
 }

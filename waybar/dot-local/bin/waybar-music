@@ -1,0 +1,18 @@
+#!/bin/sh
+
+data=$(playerctl metadata --format '{{lc(status)}} {{playerName}} {{title}} - {{artist}}' 2>/dev/null) || exit 0
+class=${data%% *}
+data=${data#* }
+player=${data%% *}
+text=${data#* }
+
+[ "$text" != "$data" ] && [ -n "$text" ] || exit 0
+
+case "$player" in
+spotify*) icon="󰓇" ;;
+firefox*|zen*|chromium*) icon="󰖟" ;;
+vlc*) icon="󰕼" ;;
+*) icon="󰎆" ;;
+esac
+
+printf '%s  %s' "$icon" "$text" | jq -R --arg class "$class" '{text: ., class: $class}'
