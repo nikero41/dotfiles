@@ -306,6 +306,7 @@ files = [
   { name = "compose.yaml", text = "󰡨", fg = "#89b4fa" },
   { name = "eslint.config.js", text = "", fg = "#585b70" },
   { name = "hyprland.conf", text = "", fg = "#74c7ec" },
+  { name = "hyprland.lua", text = "", fg = "#74c7ec" },
   { name = "docker-compose.yml", text = "󰡨", fg = "#89b4fa" },
   { name = "groovy", text = "", fg = "#585b70" },
   { name = "QtProject.conf", text = "", fg = "#a6e3a1" },

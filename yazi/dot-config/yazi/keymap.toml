@@ -55,5 +55,5 @@ desc = "Go to the root of the current Git repository"
 
 [[mgr.prepend_keymap]]
 on = "<C-p>"
-run = "shell -- qlmanage -p %s"
-desc = "Preview files with the system Quick Look"
+run = "shell -- sh ~/.local/bin/dotfiles-quicklook %s"
+desc = "Preview files with Quick Look tool"
