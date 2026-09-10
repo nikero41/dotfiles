@@ -41,11 +41,11 @@ alias -s js="\$EDITOR"
 alias -s jsx="\$EDITOR"
 alias -s ts="\$EDITOR"
 alias -s tsx="\$EDITOR"
-alias -s html=open
+alias -s html=nikero_open
 
 # global aliases
 alias -g NE="2>/dev/null"
 alias -g NO=">/dev/null"
 alias -g NUL=">/dev/null 2>&1"
 alias -g J="| jq"
-alias -g C="| pbcopy"
+alias -g C="| nikero_copy"

@@ -1,5 +1,5 @@
 google() {
-	open "https://www.google.com/search?q=$*"
+	nikero_open "https://www.google.com/search?q=$*"
 }
 
 cx() { cd "$@" && ls; }
@@ -76,6 +76,7 @@ compile_zsh_configs() {
 		"$config_dir/functions.zsh"
 		"$config_dir/init.zsh"
 		"$config_dir/keybinds.zsh"
+		"$config_dir/platform.zsh"
 		"$config_dir/polish.zsh"
 		"$config_dir/variables.zsh"
 		"$config_dir/vi-mode.zsh"

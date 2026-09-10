@@ -13,6 +13,7 @@ for file in "$CONFIG"/*.zsh; do
     "$file" == "$CONFIG/init.zsh" ||
     "$file" == "$CONFIG/aliases.zsh" ||
     "$file" == "$CONFIG/functions.zsh" ||
+    "$file" == "$CONFIG/platform.zsh" ||
     "$file" == "$CONFIG/polish.zsh" ||
     "$file" == "$CONFIG/keybinds.zsh" ]] \
     ; then
@@ -20,6 +21,7 @@ for file in "$CONFIG"/*.zsh; do
   fi
   source "$file"
 done
+source "$CONFIG/platform.zsh"
 source "$CONFIG/aliases.zsh"
 source "$CONFIG/functions.zsh"
 source "$CONFIG/keybinds.zsh"

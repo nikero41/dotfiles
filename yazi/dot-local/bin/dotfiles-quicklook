@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+case "$(uname -s)" in
+    Darwin)
+        qlmanage -p "$@"
+        ;;
+    Linux)
+        if command -v swayimg >/dev/null; then
+            swayimg "$@"
+        else
+            xdg-open "$@"
+        fi
+        ;;
+    *)
+        xdg-open "$@"
+        ;;
+esac
