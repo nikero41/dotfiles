@@ -43,6 +43,7 @@ brew "mas"
 brew "mprocs"
 brew "python@3.14"
 brew "pipx"
+brew "postgresql@18", link: true
 brew "presenterm"
 brew "ripgrep"
 brew "rust"
