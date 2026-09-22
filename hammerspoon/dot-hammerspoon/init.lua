@@ -8,7 +8,7 @@ require("lua.initSpoonInstall")
 spoon.SpoonInstall:installSpoonFromRepo("EmmyLua")
 
 local myWatcher = hs.pathwatcher
-	.new(os.getenv("home") .. "/.hammerspoon/", function(files)
+	.new(os.getenv("HOME") .. "/.hammerspoon/", function(files)
 		local doreload = false
 		for _, file in pairs(files) do
 			if file:sub(-4) == ".lua" then doReload = true end
