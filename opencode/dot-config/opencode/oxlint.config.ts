@@ -26,6 +26,7 @@ const base = defineConfig({
 		"no-param-reassign": "warn",
 		"no-var": "error",
 
+		"one-var": "off",
 		"max-lines-per-function": "off",
 		"max-lines": "off",
 		"no-warning-comments": "off",
