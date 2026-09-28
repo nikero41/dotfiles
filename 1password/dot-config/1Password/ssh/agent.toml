@@ -1,3 +1,4 @@
+#:schema https://catalog.lintel.tools/schemas/schemastore/1password-ssh-agent-config/latest.json
 # This is the 1Password SSH agent config file, which allows you to customize the
 # behavior of the SSH agent running on this machine.
 #

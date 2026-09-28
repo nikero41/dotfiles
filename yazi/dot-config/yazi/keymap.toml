@@ -1,3 +1,4 @@
+#:schema https://yazi-rs.github.io/schemas/keymap.json
 [[mgr.prepend_keymap]]
 on = [ "1" ]
 run = "plugin relative-motions --args=1"

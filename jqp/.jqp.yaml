@@ -1,2 +1,3 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/noahgorstein/jqp/main/schema.json
 theme:
   name: "catppuccin-mocha"

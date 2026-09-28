@@ -1,3 +1,4 @@
+#:schema https://gist.githubusercontent.com/dir/be969fe548c52bedf7345aa99dfa41d3/raw/f94035c18dc9856d0928d309c58fc2654bf6c253/spotify-player-app-schema.json
 theme = "Catppuccin-mocha"
 client_id_command = { command = "printenv", args = ["SPOTIFY_CLIENT_ID"] }
 client_port = 8080
