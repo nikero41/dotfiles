@@ -15,3 +15,5 @@ hs.pathwatcher
 	end)
 	:start()
 hs.alert.show("Config loaded")
+
+require("lua.work_focus")
