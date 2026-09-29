@@ -10,6 +10,7 @@ diff = hunk pager
 show = hunk pager
 log = delta
 reflog = delta
+blame = delta
 
 [init]
 defaultBranch = main

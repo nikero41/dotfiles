@@ -2,17 +2,31 @@
 diffFilter = delta --color-only
 
 [delta]
-navigate = true # use n and N to move between diff sections
+navigate = true
 colorMoved = default
-features = catppuccin-mocha
-side-by-side = false
+features = catppuccin-mocha custom-theme interactive
+side-by-side = true
 syntax-theme = OneHalfDark
 tabs = 2
 true-color = always
-hyperlinks = true
+line-numbers = true
+line-numbers-left-format = "{nm:>4} "
+line-numbers-right-format = "{np:>4} "
+file-modified-label = " 󰏫 "
+file-modified-label = "  "
+file-added-label = "  "
+file-removed-label = "  "
+file-copied-label = " 󰈙 "
+wrap-max-lines = unlimited
 
 [diff]
 colorMoved = default
+
+[delta "interactive"]
+hyperlinks = true
+
+[delta "worktrunk"]
+hyperlinks = false
 
 [delta "catppuccin-mocha"]
 blame-palette = "#1e1e2e #181825 #11111b #313244 #45475a"
@@ -44,3 +58,17 @@ map-styles = \
 	bold yellow => syntax "#6b635b"
 # Should match the name of the bat theme
 ; syntax-theme = Catppuccin Mocha
+
+[delta "custom-theme"]
+commit-decoration-style = "#fab387" box
+dark = true
+file-decoration-style = "#cba6f7" box ul
+file-style = "#89b4fa"
+hunk-header-decoration-style = "#fab387" box
+hunk-header-style = syntax
+# 10% red 90% base
+minus-style = syntax "#33293a"
+# 35% green 65% base
+plus-emph-style = bold syntax "#4e6356"
+# 10% green 90% base
+plus-style = syntax "#2c3239"
