@@ -1,15 +1,13 @@
-local super = { "cmd", "ctrl", "alt" }
-local hyper = { "cmd", "ctrl", "alt", "shift" }
+-- local super = { "cmd", "ctrl", "alt" }
+-- local hyper = { "cmd", "ctrl", "alt", "shift" }
 
 require("lua.init_spoon_install")
-function p(variable) print("🪚 hs.inspect: " .. hs.inspect.inspect(variable)) end
 
 spoon.SpoonInstall:andUse("EmmyLua")
 
-
-local myWatcher = hs.pathwatcher
+hs.pathwatcher
 	.new(os.getenv("HOME") .. "/.hammerspoon/", function(files)
-		local doreload = false
+		local doReload = false
 		for _, file in pairs(files) do
 			if file:sub(-4) == ".lua" then doReload = true end
 		end
