@@ -1,11 +1,11 @@
 local super = { "cmd", "ctrl", "alt" }
 local hyper = { "cmd", "ctrl", "alt", "shift" }
 
+require("lua.init_spoon_install")
 function p(variable) print("🪚 hs.inspect: " .. hs.inspect.inspect(variable)) end
 
-require("lua.initSpoonInstall")
+spoon.SpoonInstall:andUse("EmmyLua")
 
-spoon.SpoonInstall:installSpoonFromRepo("EmmyLua")
 
 local myWatcher = hs.pathwatcher
 	.new(os.getenv("HOME") .. "/.hammerspoon/", function(files)

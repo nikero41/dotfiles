@@ -1,0 +1,6 @@
+std = "lua54+hammerspoon"
+
+[rules]
+global_usage = "allow"
+mixed_table = "allow"
+multiple_statements = "allow"
