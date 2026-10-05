@@ -38,6 +38,9 @@ export FZF_DEFAULT_OPTS=" \
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
+# Rust
+export PATH=$PATH:$HOME/.cargo/bin
+
 # jenv
 export PATH="$HOME/.jenv/bin:$PATH"
 
