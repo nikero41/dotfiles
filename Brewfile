@@ -1,4 +1,4 @@
-tap "anomalyco/tap"
+tap "anomalyco/tap", trusted: true
 tap "bellicose100xp/tap" # jiq
 tap "boolean-maybe/tap" # tiki
 tap "brevity1swos/tap" # rgx
@@ -65,7 +65,7 @@ brew "worktrunk"
 brew "yazi"
 brew "yq"
 brew "zoxide"
-brew "anomalyco/tap/opencode", trusted: true
+brew "anomalyco/tap/opencode-v2", trusted: true
 brew "bellicose100xp/tap/jiq", trusted: true
 brew "boolean-maybe/tap/tiki", trusted: true
 brew "brevity1swos/tap/rgx", trusted: true
