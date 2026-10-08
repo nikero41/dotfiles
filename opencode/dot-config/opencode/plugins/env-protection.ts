@@ -1,32 +1,33 @@
-import type { Plugin } from "@opencode-ai/plugin";
+import { Plugin } from "@opencode/plugin/effect";
+import { Tool } from "@opencode/schema/tool";
+import { Effect, Schema as S } from "effect";
 
-export const EnvProtection: Plugin = () =>
-	Promise.resolve({
-		"tool.execute.before": (input, output) => {
-			if (input.tool === "bash" && hasProtectedEnvReference(output.args)) {
-				throw new Error("Do not access protected .env files through Bash");
-			}
+export default Plugin.define({
+	id: "env-protection",
+	effect: ctx =>
+		ctx.tool.hook("execute.before", ({ tool, input }) =>
+			Effect.all([
+				S.decodeUnknownEffect(ReadToolSchema)(tool),
+				S.decodeUnknownEffect(ProtectedEnvSchema)(input),
+			]).pipe(
+				Effect.map(
+					() => new Tool.Error(new Error("Do not read protected .env files")),
+				),
+				Effect.flip,
+				Effect.asVoid,
+			),
+		),
+});
 
-			if (
-				["edit", "glob", "grep", "read"].includes(input.tool) &&
-				hasProtectedEnvReference(output.args)
-			) {
-				throw new Error("Do not read protected .env files");
-			}
-			return Promise.resolve();
-		},
-	});
+const ReadToolSchema = S.Literals(["edit", "glob", "grep", "read", "shell"]);
+const ProtectedEnvPathSchema = S.NonEmptyString.check(
+	// [\s"'=/:\\] allows whitespace, quotes, =, or a path separator before .env.
+	// [^\s"'=;|&/\\]* reads the filename suffix without consuming separators.
+	// (?=$|[\s"'=;|&]) requires the filename to end before whitespace, quotes, shell operators, or the end of the string.
+	S.isPattern(/(?:^|[/\\])\.env(?:\.(?!(?:example|sample)$)[^/\\]+)?$/),
+);
 
-const hasProtectedEnvReference = (args: unknown) => {
-	if (typeof args === "string") return containsProtectedEnvPath(args);
-	if (!args || typeof args !== "object") return false;
-
-	return Object.values(args).some(
-		value => typeof value === "string" && containsProtectedEnvPath(value),
-	);
-};
-
-const containsProtectedEnvPath = (value: string) =>
-	/(?:^|[\s"'=/:])(?:[^\s"'=;|&]*[\\/])?\.env(?:\.[^\s"'=;|&]*)?(?=$|[\s"'=;|&])/.test(
-		value,
-	) && !/(?:^|[\\/])\.env\.(?:sample|example)(?=$|[\s"'=;|&])/.test(value);
+const ProtectedEnvSchema = S.Union([
+	ProtectedEnvPathSchema,
+	S.Record(S.String, ProtectedEnvPathSchema),
+]);
