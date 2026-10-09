@@ -21,7 +21,7 @@ alias ghs="gh stack"
 # eza
 alias ls="eza --group-directories-first --icons --oneline"
 alias lsl="eza --group-directories-first --icons --long --no-user --git"
-alias lst="eza --group-directories-first --icons --tree"
+alias lst="eza --group-directories-first --icons --tree --level 2"
 
 # pnpm
 alias pn="pnpm"
