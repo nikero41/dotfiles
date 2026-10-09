@@ -77,6 +77,7 @@ cask "nikitabobko/tap/aerospace", trusted: true
 cask "android-studio"
 cask "betterdisplay"
 cask "caskhub"
+cask "docker-desktop"
 cask "font-fira-code-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
 cask "ghostty"
