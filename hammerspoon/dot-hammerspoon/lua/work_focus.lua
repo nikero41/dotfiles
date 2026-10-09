@@ -9,26 +9,19 @@ local function set_work_focus(enable)
 	end
 end
 
-if hs.application.get(work_app_name):isRunning() then
-	hs.shortcuts.run("Start working")
-else
-	hs.shortcuts.run("Stop working")
-end
+local work_app = hs.application.get(work_app_name)
+set_work_focus(work_app ~= nil and work_app:isRunning())
 
-hs
-	.application
-	.watcher
+local watcher = hs.application.watcher
+watcher
 	---@param name string|nil
 	---@param eventType integer
 	.new(function(name, eventType)
 		if
 			name == work_app_name
-			and (
-				eventType == hs.application.watcher.launched
-				or eventType == hs.application.watcher.terminated
-			)
+			and (eventType == watcher.launched or eventType == watcher.terminated)
 		then
-			set_work_focus(eventType == hs.application.watcher.launched)
+			set_work_focus(eventType == watcher.launched)
 		end
 	end)
 	:start()
