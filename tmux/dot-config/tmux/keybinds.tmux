@@ -20,6 +20,7 @@ bind -N "Toggle vertical layouts" / if-shell -F \
     select-layout main-vertical
     set -g @toggle_layout main-vertical
   }
+bind -N "Auto-size window" A set-window-option window-size latest
 
 # popups
 set -g @lazygit_popup_cmd 'tmux popup -d "#{pane_current_path}" -E -w 90% -h 90% -T Git lazygit'
