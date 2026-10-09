@@ -62,9 +62,9 @@ map-styles = \
 [delta "custom-theme"]
 commit-decoration-style = "#fab387" box
 dark = true
-file-decoration-style = "#cba6f7" box ul
+file-decoration-style = "#fab387" box ul
 file-style = "#89b4fa"
-hunk-header-decoration-style = "#fab387" box
+hunk-header-decoration-style = "#cba6f7" box
 hunk-header-style = syntax
 # 10% red 90% base
 minus-style = syntax "#33293a"
