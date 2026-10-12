@@ -12,7 +12,7 @@ set -g @plugin "wfxr/tmux-fzf-url"
 set -g @plugin "nhdaly/tmux-better-mouse-mode"
 
 # Smart Splits
-set -g @plugin "mrjones2014/smart-splits.nvim"
+set -g @plugin "smart-splits-nvim/backend-tmux"
 set -g @smart-splits_resize_left_key  ""
 set -g @smart-splits_resize_down_key  ""
 set -g @smart-splits_resize_up_key    ""
