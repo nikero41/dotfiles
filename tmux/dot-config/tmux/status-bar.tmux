@@ -31,6 +31,8 @@ set -g window-status-current-format "\
 #{?#{window_marked_flag}, 󰈽}\
 #[noreverse]"
 
+set -g window-status-current-style none
+
 set -gF window-status-separator " #{E:@status-separator} "
 
 set -g window-status-style "bg=default,fg=#{@thm_flamingo}"
