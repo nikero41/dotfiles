@@ -33,4 +33,7 @@
 vault = "Developer"
 
 [[ssh-keys]]
+vault = "Dokploy"
+
+[[ssh-keys]]
 vault = "ESN"
