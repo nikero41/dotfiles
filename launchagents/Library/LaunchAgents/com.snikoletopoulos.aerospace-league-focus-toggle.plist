@@ -6,16 +6,13 @@
     <string>com.snikoletopoulos.aerospace-league-focus-toggle</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/usr/bin/swift</string>
-      <string>/Users/snikoletopoulos/.config/aerospace/league-focus-toggle.swift</string>
+      <string>/bin/sh</string>
+      <string>-c</string>
+      <string>exec /usr/bin/swift "$HOME/.config/aerospace/league-focus-toggle.swift" &gt;&gt; "$HOME/Library/Logs/aerospace-league-focus-toggle.log" 2&gt;&amp;1</string>
     </array>
     <key>RunAtLoad</key>
     <true />
     <key>KeepAlive</key>
     <true />
-    <key>StandardOutPath</key>
-    <string>/Users/snikoletopoulos/Library/Logs/aerospace-league-focus-toggle.log</string>
-    <key>StandardErrorPath</key>
-    <string>/Users/snikoletopoulos/Library/Logs/aerospace-league-focus-toggle.log</string>
   </dict>
 </plist>
