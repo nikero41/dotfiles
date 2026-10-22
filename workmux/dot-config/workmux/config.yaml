@@ -1,0 +1,20 @@
+nerdfont: true
+theme: festival-circuit
+agent: opencode
+
+auto_name:
+  model: "gpt-6.1"
+
+panes:
+  - command: nvim
+    focus: true
+  - command: <agent>
+    split: horizontal
+
+files:
+  copy:
+    - .env
+
+sidebar:
+  enter_action: select
+  group_by: project

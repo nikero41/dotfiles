@@ -30,6 +30,9 @@ alias pn="pnpm"
 alias mux="tmuxinator"
 alias muxstart="mux list -n | tail -n +2 | fzf | xargs tmuxinator start"
 
+# workmux
+alias wm="workmux"
+
 # files extensions
 alias -s json=fx
 alias -s md=bat

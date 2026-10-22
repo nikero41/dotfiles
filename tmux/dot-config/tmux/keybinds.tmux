@@ -29,7 +29,7 @@ bind -N "Spotify" m run-shell \
   'tmux popup -d "#{pane_current_path}" -E -w 90% -h 90% -T Spotify spotify_player'
 bind -N "File manager" f run-shell \
   'tmux popup -d "#{pane_current_path}" -E -w 90% -h 90% -T "File manager" yazi'
-bind -N "Activity monitor" a run-shell \
+bind -N "Activity monitor" A run-shell \
   'tmux popup -E -w 90% -h 90% -T Activity btop'
 
 unbind P
@@ -66,6 +66,11 @@ bind -N "Resize pane up" -r K resize-pane -U 5
 bind -N "Resize pane right" -r L resize-pane -R 5
 
 bind -n "C-\\" select-pane -l
+
+bind -N "Last agent" Tab run-shell "workmux last-agent"
+bind -N "Agent dashboard" i display-popup -h 80% -w 50% -E "workmux dashboard"
+bind -N "Go to ready agent" o run-shell "workmux last-done"
+bind -N "Agent sidebar" a run-shell "workmux sidebar"
 
 # make panes equal on =
 

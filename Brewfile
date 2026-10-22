@@ -6,6 +6,7 @@ tap "felixkratz/formulae" # borders
 tap "jorgerojas26/lazysql"
 tap "knqyf263/pet"
 tap "nikitabobko/tap" # aerospace
+tap "raine/workmux"
 brew "bash"
 brew "bat"
 brew "btop"
@@ -72,6 +73,7 @@ brew "brevity1swos/tap/rgx", trusted: true
 brew "felixkratz/formulae/borders", trusted: true
 brew "jorgerojas26/lazysql/lazysql", trusted: true
 brew "knqyf263/pet/pet", trusted: true
+brew "raine/workmux/workmux", trusted: true
 cask "1password-cli"
 cask "nikitabobko/tap/aerospace", trusted: true
 cask "android-studio"
