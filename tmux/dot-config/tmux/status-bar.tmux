@@ -1,5 +1,5 @@
 %hidden COLOR_PRIMARY="#{@thm_peach}"
-%hidden COLOR_MUTED="#{@thm_overlay_0}"
+%hidden COLOR_MUTED="#{@thm_surface_1}"
 
 source-file -F "#{HOME}/.config/tmux/status-widgets/widgets.tmux"
 
@@ -35,7 +35,7 @@ set -g window-status-current-style none
 
 set -gF window-status-separator " #{E:@status-separator} "
 
-set -g window-status-style "bg=default,fg=#{@thm_flamingo}"
+set -g window-status-style "bg=default,fg=#{@thm_subtext_1}"
 set -g window-status-last-style "fg=${COLOR_PRIMARY}"
 set -g window-status-activity-style "bg=#{@thm_red},fg=#{@thm_bg}"
 
