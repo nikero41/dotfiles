@@ -5,9 +5,6 @@ gui:
   nerdFontsVersion: "3"
   border: "rounded"
   scrollPastBottom: true
-  authorColors:
-    "Stavros Nikoletopoulos": "#f47b20"
-    "*": "#b4befe"
   fileTreeSortOrder: foldersFirst
   scrollHeight: 4
   showListFooter: false
@@ -23,27 +20,36 @@ gui:
       - bold
     inactiveBorderColor:
       - "#a6adc8"
+    searchingActiveBorderColor:
+      - "#f9e2af"
     optionsTextColor:
       - "#89b4fa"
     selectedLineBgColor:
-      - "#392E45"
-    cherryPickedCommitBgColor:
-      - "#45475a"
+      - "#313244"
+    inactiveViewSelectedLineBgColor:
+      - "#6c7086"
     cherryPickedCommitFgColor:
       - "#cba6f7"
+    cherryPickedCommitBgColor:
+      - "#45475a"
+    markedBaseCommitFgColor:
+      - "#89b4fa"
+    markedBaseCommitBgColor:
+      - "#f9e2af"
     unstagedChangesColor:
       - "#f38ba8"
     defaultFgColor:
       - "#cdd6f4"
-    searchingActiveBorderColor:
-      - "#f9e2af"
+    authorColors:
+      "Stavros Nikoletopoulos": "#f47b20"
+      "*": "#b4befe"
 os:
   editPreset: "nvim"
 promptToReturnFromSubprocess: false
 git:
   diffRenderers:
     - colorArg: always
-      command: delta --dark --paging=never --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+      command: delta --{{colorScheme}} --paging=never --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
   log:
     showGraph: "always"
   parseEmoji: true
