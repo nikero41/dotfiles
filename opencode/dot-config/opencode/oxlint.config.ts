@@ -101,7 +101,6 @@ const typescript = defineConfig({
 		"typescript/no-deprecated": "warn",
 		"typescript/ban-ts-comment": ["error", { minimumDescriptionLength: 5 }],
 		"typescript/only-throw-error": ["error", { allow: [] }],
-		// TODO: "typescript/naming-convention": "warn",
 		"typescript/no-misused-promises": [
 			"error",
 			{

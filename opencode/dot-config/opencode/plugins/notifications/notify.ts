@@ -1,16 +1,13 @@
 import { basename } from "path";
-import notifier, { type NotificationCallback } from "node-notifier";
+import { Effect } from "effect";
+import notifier, { type NotificationMetadata } from "node-notifier";
+import type { SessionInfo } from "@opencode/client";
 
-type NotificationInput = {
-	directory: string;
-	sessionId: string | null;
-	title: string | null;
-} & (
+export type NotificationOptions =
 	| { kind: "permission" | "complete"; error?: never }
-	| { kind: "error"; error: string }
-);
+	| { kind: "error"; error: string };
 
-type NotificationKind = NotificationInput["kind"];
+export type NotificationKind = NotificationOptions["kind"];
 
 const NOTIFICATION_TITLES = {
 	permission: "OpenCode needs permission",
@@ -18,33 +15,37 @@ const NOTIFICATION_TITLES = {
 	error: "OpenCode encountered an error",
 } as const satisfies Record<NotificationKind, string>;
 
-export const notify = (
-	input: NotificationInput,
-	callback?: NotificationCallback,
-) => {
-	notifier.notify(
-		{
-			title: NOTIFICATION_TITLES[input.kind],
-			message: notificationBody(input),
-			sound: true,
-			wait: true,
-		},
-		callback,
-	);
-};
+export function createNotification(
+	session: SessionInfo,
+	opts: NotificationOptions,
+) {
+	return Effect.callback<
+		{ response: string; metadata: NotificationMetadata | undefined },
+		Error
+	>(resume => {
+		let message = basename(session.location.directory);
+		if (session.title) message = session.title;
+		if (opts.kind === "error") message = `${message}: ${opts.error}`;
 
-const notificationBody = (input: NotificationInput) => {
-	if (input.title) return sanitizeText(input.title, 160);
-	if (input.kind === "error") return sanitizeText(input.error, 160);
+		notifier.notify(
+			{
+				title: NOTIFICATION_TITLES[opts.kind],
+				message: sanitizeText(message),
+				sound: true,
+				wait: true,
+			},
+			(error, response, metadata) => {
+				if (error) resume(Effect.fail(error));
+				else resume(Effect.succeed({ response, metadata }));
+			},
+		);
+	});
+}
 
-	const projectName = basename(input.directory);
-	return projectName && projectName !== "/" ? projectName : "OpenCode";
-};
-
-const sanitizeText = (value: string, maxLength: number) => {
+const sanitizeText = (value: string) => {
 	const normalized = value.replaceAll(/\s+/g, " ").trim();
 
-	return normalized.length <= maxLength
+	return normalized.length <= 160
 		? normalized
-		: `${normalized.slice(0, Math.max(0, maxLength - 3))}...`;
+		: `${normalized.slice(0, Math.max(0, 160 - 3))}...`;
 };

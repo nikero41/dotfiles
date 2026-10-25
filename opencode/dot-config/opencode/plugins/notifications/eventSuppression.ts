@@ -1,24 +1,42 @@
+import { Clock, Context, Effect, HashMap, Layer, Option, Ref } from "effect";
+
 const COMPLETE_SUPPRESSION_AFTER_ERROR_MS = 5000;
 
-export class EventSuppression {
-	suppressUntil = new Map<string, number>();
+export class EventSuppress extends Context.Service<EventSuppress>()(
+	"EventSuppression",
+	{
+		make: Effect.gen(function* () {
+			const state = yield* Ref.make(HashMap.empty<string, number>());
 
-	cleanup = (now: number) => {
-		this.suppressUntil.forEach((expiresAt, sessionID) => {
-			if (expiresAt <= now) this.suppressUntil.delete(sessionID);
-		});
-	};
+			return {
+				suppressNext: (sessionId: string) =>
+					Effect.gen(function* () {
+						const now = yield* Clock.currentTimeMillis;
+						yield* Ref.update(state, state =>
+							state.pipe(
+								HashMap.filter(expiresAt => expiresAt > now),
+								HashMap.set(
+									sessionId,
+									now + COMPLETE_SUPPRESSION_AFTER_ERROR_MS,
+								),
+							),
+						);
+					}),
 
-	suppressNext = (sessionId: string, now: number) => {
-		this.suppressUntil.set(
-			sessionId,
-			now + COMPLETE_SUPPRESSION_AFTER_ERROR_MS,
-		);
-	};
-
-	shouldSuppress = (sessionID: string, now: number) => {
-		const expiresAt = this.suppressUntil.get(sessionID);
-		if (expiresAt) this.suppressUntil.delete(sessionID);
-		return !!expiresAt && expiresAt > now;
-	};
+				allowNotification: (sessionID: string) =>
+					Effect.gen(function* () {
+						const now = yield* Clock.currentTimeMillis;
+						return yield* Ref.modify(state, state => [
+							HashMap.get(state, sessionID).pipe(
+								Option.map(expiresAt => expiresAt <= now),
+								Option.getOrElse(() => true),
+							),
+							HashMap.remove(state, sessionID),
+						]);
+					}),
+			};
+		}),
+	},
+) {
+	static readonly layer = Layer.effect(this, this.make);
 }
