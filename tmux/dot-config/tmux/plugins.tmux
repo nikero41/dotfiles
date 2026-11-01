@@ -40,6 +40,7 @@ set -g @sessionx-tmuxinator-mode "on"
 set -g @sessionx-bind-tmuxinator-list "ctrl-p"
 set -g @sessionx-filtered-sessions "floax"
 set -g @sessionx-legacy-fzf-support "off"
+set -g @sessionx-git-branch "on"
 
 # FloaX
 set -g @plugin "omerxx/tmux-floax"
