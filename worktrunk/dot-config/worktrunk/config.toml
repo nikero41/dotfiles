@@ -1,6 +1,7 @@
 skip-commit-generation-prompt = true
 
-worktree-path = "{{ repo_path }}/{{ branch | sanitize }}"
+# Keep worktrees beside the bare repository directory (e.g. project/.git).
+worktree-path = "{{ repo_path }}/../{{ branch | sanitize }}"
 
 # [commit.generation]
 # command = "opencode run -m opencode/gpt-6-luna --variant none"
