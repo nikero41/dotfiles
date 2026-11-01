@@ -2,6 +2,9 @@ nerdfont: true
 theme: festival-circuit
 agent: opencode
 
+worktree_dir: ..
+window_prefix: ""
+
 auto_name:
   model: "gpt-6.1"
 
