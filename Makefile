@@ -2,7 +2,16 @@ define log
 	printf "\n\e[1;34m====> %s <====\e[0m\n\n" $(1);
 endef
 
-STOW_PACKAGES := $(filter-out launchagents/,$(wildcard */))
+UNAME_S := $(shell uname -s)
+EXCLUDED_PACKAGES := launchagents/
+
+ifeq ($(UNAME_S),Darwin)
+EXCLUDED_PACKAGES += linux/
+else ifeq ($(UNAME_S),Linux)
+EXCLUDED_PACKAGES += mac/
+endif
+
+STOW_PACKAGES := $(filter-out $(EXCLUDED_PACKAGES),$(wildcard */))
 
 .PHONY: all
 all: link setup-launchagents setup-homebrew install-packages setup-tmux setup-yazi install-node install-global-npm setup-env-vars setup-zsh
@@ -11,13 +20,17 @@ all: link setup-launchagents setup-homebrew install-packages setup-tmux setup-ya
 link:
 	@$(call log,"Setting up dotfiles")
 	@stow $(STOW_PACKAGES)
-	@stow --no-folding launchagents
+	ifeq ($(UNAME_S),Darwin)
+		@stow --no-folding launchagents
+	endif
 
 .PHONY: setup-launchagents
 setup-launchagents: link
-	@$(call log,"Setting up launch agents")
-	@launchctl bootout gui/$$(id -u)/com.snikoletopoulos.aerospace-league-focus-toggle 2>/dev/null || true
-	@launchctl bootstrap gui/$$(id -u) "$${HOME}/Library/LaunchAgents/com.snikoletopoulos.aerospace-league-focus-toggle.plist"
+	ifeq ($(UNAME_S),Darwin)
+		@$(call log,"Setting up launch agents")
+		@launchctl bootout gui/$$(id -u)/com.snikoletopoulos.aerospace-league-focus-toggle 2>/dev/null || true
+		@launchctl bootstrap gui/$$(id -u) "$${HOME}/Library/LaunchAgents/com.snikoletopoulos.aerospace-league-focus-toggle.plist"
+	endif
 
 .PHONY: setup-homebrew
 setup-homebrew:
