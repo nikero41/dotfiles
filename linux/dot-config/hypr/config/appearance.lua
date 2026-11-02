@@ -1,6 +1,10 @@
 local colors = require("config.colors")
 
 hl.config({
+    quirks = {
+        -- Preserve alpha-capable buffer formats on older Intel GPUs (Hyprland 0.57).
+        skip_non_kms_dmabuf_formats = false,
+    },
     general = {
         gaps_in = 5,
         gaps_out = { top = 6, right = 10, bottom = 10, left = 10 },

@@ -130,7 +130,8 @@ bind("XF86AudioMute", hl.dsp.exec_cmd("swayosd-client --output-volume mute-toggl
     locked = true,
     description = "Toggle audio mute",
 })
-bind("Caps_Lock", hl.dsp.exec_cmd("swayosd-client --caps-lock"), {
+-- Physical Left Ctrl toggles Caps Lock under ctrl:swapcaps.
+bind("code:37", hl.dsp.exec_cmd("swayosd-client --caps-lock"), {
     release = true,
     description = "Show Caps Lock state",
 })
@@ -153,6 +154,10 @@ bind("XF86AudioNext", hl.dsp.exec_cmd("swayosd-client --playerctl next"), { lock
 bind("XF86AudioPause", hl.dsp.exec_cmd("swayosd-client --playerctl play-pause"), { locked = true, description = "Play or pause" })
 bind("XF86AudioPlay", hl.dsp.exec_cmd("swayosd-client --playerctl play-pause"), { locked = true, description = "Play or pause" })
 bind("XF86AudioPrev", hl.dsp.exec_cmd("swayosd-client --playerctl previous"), { locked = true, description = "Previous track" })
+
+bind("CTRL + SHIFT + space", hl.dsp.global("anomaly.hex:dictation-CTRL-SHIFT-space"), {
+    description = "Dictate with Hex",
+})
 
 bind("CTRL + " .. main_mod .. " + space", hl.dsp.exec_cmd("hyprctl switchxkblayout all next"), {
     description = "Switch keyboard layout",

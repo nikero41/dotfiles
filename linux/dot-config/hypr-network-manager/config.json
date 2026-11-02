@@ -1,0 +1,17 @@
+{
+  "window_width": 480,
+  "window_height": 680,
+  "layer_shell_layer": "overlay",
+  "position": "top-right",
+  "layer_shell_margin_top": 52,
+  "layer_shell_margin_right": 12,
+  "layer_shell_margin_bottom": 12,
+  "layer_shell_margin_left": 12,
+  "log_level": "info",
+  "load_core_styles": true,
+  "scan_interval": 30,
+  "close_on_connect": true,
+  "show_bssid": false,
+  "show_frequency": true,
+  "show_band": false
+}

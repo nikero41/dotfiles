@@ -1,0 +1,30 @@
+:root {
+  --surface: #1e1e2e;
+  --surface_soft: #313244;
+  --surface_raised: #45475a;
+  --on_surface: #cdd6f4;
+  --on_surface_variant: #9399b2;
+  --primary: #cba6f7;
+  --secondary: #89b4fa;
+  --error: #f38ba8;
+  --success: #a6e3a1;
+  --action: #cba6f7;
+  --primary_hover: #f5c2e7;
+
+  --text: var(--on_surface);
+  --background-alt: alpha(var(--surface), .4);
+  --selected: var(--primary);
+  --hover: alpha(var(--secondary), .16);
+  --urgent: var(--error);
+  --line: alpha(var(--on_surface), .13);
+  --line_strong: alpha(var(--on_surface), .24);
+  --active: alpha(var(--secondary), .22);
+  --hover_soft: alpha(var(--secondary), .11);
+  --hover_row: alpha(var(--secondary), .06);
+  --selected_soft: alpha(var(--secondary), .09);
+}
+
+* {
+  color: var(--text);
+  font-size: 14px;
+}

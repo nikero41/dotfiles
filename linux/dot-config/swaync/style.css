@@ -1,0 +1,244 @@
+:root {
+  --cc-bg: rgba(30, 30, 46, 0.96);
+  --noti-border-color: rgba(69, 71, 90, 0.9);
+  --noti-bg: 24, 24, 37;
+  --noti-bg-alpha: 0.98;
+  --noti-bg-darker: rgb(17, 17, 27);
+  --noti-bg-hover: rgb(49, 50, 68);
+  --noti-bg-focus: rgba(137, 180, 250, 0.16);
+  --noti-close-bg: rgb(49, 50, 68);
+  --noti-close-bg-hover: rgb(243, 139, 168);
+  --text-color: rgb(205, 214, 244);
+  --text-color-disabled: rgb(166, 173, 200);
+  --bg-selected: rgb(137, 180, 250);
+  --notification-icon-size: 56px;
+  --notification-app-icon-size: 18px;
+  --border: 1px solid var(--noti-border-color);
+  --border-radius: 12px;
+  --notification-shadow: 0 8px 24px rgba(17, 17, 27, 0.42);
+  --font-size-body: 14px;
+  --font-size-summary: 14px;
+}
+
+notificationwindow,
+blankwindow,
+.floating-notifications,
+.blank-window {
+  background: transparent;
+}
+
+.notification-row .notification-background {
+  padding: 6px 8px;
+}
+
+.notification-row .notification-background .notification {
+  border: var(--border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--notification-shadow);
+}
+
+.notification-row .notification-background .notification.critical {
+  border-color: rgba(243, 139, 168, 0.9);
+}
+
+.notification-row .notification-background .notification .notification-default-action {
+  padding: 8px;
+}
+
+.notification-row .notification-background .notification .notification-default-action:hover,
+.control-center .control-center-list .notification .notification-default-action:hover,
+.control-center .control-center-list .notification .notification-action:hover {
+  background: var(--noti-bg-hover);
+}
+
+.notification-row .notification-background .notification .notification-default-action .notification-content .image {
+  border-radius: 8px;
+  margin: 2px 8px 2px 2px;
+}
+
+.notification-row .notification-background .notification .notification-default-action .notification-content .app-icon {
+  margin: 4px;
+}
+
+.notification-row .notification-background .notification .notification-default-action .notification-content .text-box .summary {
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+.notification-row .notification-background .notification .notification-default-action .notification-content .text-box .time {
+  color: rgb(166, 173, 200);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.notification-row .notification-background .notification .notification-default-action .notification-content .text-box .body {
+  color: rgb(186, 194, 222);
+}
+
+.close-button {
+  background: var(--noti-close-bg);
+  border: none;
+  border-radius: 100%;
+  color: var(--text-color);
+  min-height: 22px;
+  min-width: 22px;
+}
+
+.close-button:hover {
+  background: var(--noti-close-bg-hover);
+  color: rgb(17, 17, 27);
+}
+
+.control-center {
+  background: var(--cc-bg);
+  border: var(--border);
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(17, 17, 27, 0.5);
+  color: var(--text-color);
+  padding: 6px;
+}
+
+.control-center .control-center-list-placeholder {
+  color: rgb(166, 173, 200);
+  font-style: italic;
+}
+
+.widget {
+  margin: 4px 2px;
+  padding: 8px;
+}
+
+.widget-title > label {
+  color: rgb(205, 214, 244);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.widget-title > button {
+  background: rgb(49, 50, 68);
+  border: none;
+  border-radius: 8px;
+  color: rgb(186, 194, 222);
+  padding: 5px 10px;
+}
+
+.widget-title > button:hover {
+  background: rgb(69, 71, 90);
+  color: rgb(205, 214, 244);
+}
+
+.widget-dnd {
+  background: rgb(24, 24, 37);
+  border: var(--border);
+  border-radius: 10px;
+}
+
+.widget-dnd label {
+  color: rgb(186, 194, 222);
+  font-size: 14px;
+}
+
+.widget-dnd switch {
+  background: rgb(69, 71, 90);
+  border-radius: 12px;
+}
+
+.widget-dnd switch:checked {
+  background: rgb(203, 166, 247);
+}
+
+.widget-dnd switch slider {
+  background: rgb(205, 214, 244);
+  border-radius: 100%;
+}
+
+.widget-mpris .widget-mpris-player {
+  border: var(--border);
+  border-radius: 10px;
+  box-shadow: none;
+  margin: 2px;
+}
+
+.widget-mpris .widget-mpris-player .mpris-overlay {
+  background: rgba(24, 24, 37, 0.9);
+  padding: 10px;
+}
+
+.widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-album-art {
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-title {
+  color: rgb(205, 214, 244);
+  font-size: 14px;
+}
+
+.widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-subtitle {
+  color: rgb(166, 173, 200);
+  font-size: 12px;
+}
+
+.widget-mpris button,
+.widget-volume button,
+.widget-buttons-grid flowboxchild > button {
+  background: rgb(49, 50, 68);
+  border: none;
+  border-radius: 8px;
+  color: rgb(205, 214, 244);
+}
+
+.widget-mpris button:hover,
+.widget-volume button:hover,
+.widget-buttons-grid flowboxchild > button:hover {
+  background: rgb(69, 71, 90);
+}
+
+.widget-buttons-grid flowboxchild > button.toggle:checked {
+  background: rgb(203, 166, 247);
+  color: rgb(17, 17, 27);
+}
+
+.widget-buttons-grid {
+  padding: 0;
+}
+
+.widget-buttons-grid flowboxchild {
+  margin: 0;
+  padding: 0;
+}
+
+.widget-buttons-grid flowboxchild > button {
+  margin: 2px;
+  min-height: 34px;
+}
+
+.widget-volume,
+.widget-backlight {
+  background: rgb(24, 24, 37);
+  border: var(--border);
+  border-radius: 10px;
+}
+
+.widget-volume label,
+.widget-backlight label {
+  color: rgb(186, 194, 222);
+}
+
+scale trough {
+  background: rgb(69, 71, 90);
+  border-radius: 8px;
+  min-height: 6px;
+}
+
+scale highlight {
+  background: rgb(137, 180, 250);
+  border-radius: 8px;
+}
+
+scale slider {
+  background: rgb(205, 214, 244);
+  border-radius: 100%;
+  min-height: 14px;
+  min-width: 14px;
+}

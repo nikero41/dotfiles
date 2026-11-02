@@ -1,0 +1,5 @@
+.nm-window {
+  border: 1px solid alpha(#45475a, .9);
+  border-radius: 14px;
+  box-shadow: 0 12px 32px alpha(#11111b, .5);
+}
