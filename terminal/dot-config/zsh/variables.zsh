@@ -1,16 +1,16 @@
 export EDITOR="nvim"
 export VISUAL="nvim"
 export MANPAGER="nvim +Man!"
-export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:=$HOME/.config}"
 
 # zsh-history-substring-search
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=216,fg=black,bold'
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='bg=211,fg=black,bold'
 
 # Android Studio
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+export ANDROID_HOME=${ANDROID_HOME:=$HOME/Library/Android/sdk}
+export PATH="$PATH:$ANDROID_HOME/emulator"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
 
 # ccache
 export CCACHE_SLOPPINESS=clang_index_store,file_stat_matches,include_file_ctime,include_file_mtime,ivfsoverlay,pch_defines,modules,system_headers,time_macros
@@ -19,7 +19,7 @@ export CCACHE_DEPEND=true
 export CCACHE_INODECACHE=true
 
 # lazygit
-export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml"
+export LG_CONFIG_FILE="${LG_CONFIG_FILE:=$XDG_CONFIG_HOME/lazygit/config.yml}"
 
 # fzf
 export FZF_DEFAULT_OPTS=" \
@@ -35,11 +35,13 @@ export FZF_DEFAULT_OPTS=" \
 --cycle"
 
 # Go
-export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+export GOPATH="${GOPATH:=$HOME/go}"
+export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
 
 # Rust
-export PATH=$PATH:$HOME/.cargo/bin
+export RUSTUP_HOME="${RUSTUP_HOME:=$HOME/.rustup}"
+export CARGO_HOME="${CARGO_HOME:=$HOME/.cargo}"
+export PATH="$PATH:$CARGO_HOME/bin"
 
 # jenv
 export PATH="$HOME/.jenv/bin:$PATH"
@@ -48,7 +50,7 @@ export PATH="$HOME/.jenv/bin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # bun
-export BUN_INSTALL="$HOME/.bun"
+export BUN_INSTALL="${BUN_INSTALL:=$HOME/.bun}"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # gh enhance
