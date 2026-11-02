@@ -93,7 +93,9 @@ install-global-npm:
 		neovim \
 		port-whisperer \
 		prisma \
+		pretty-ts-errors-markdown \
 		turbo \
+		tree-sitter-cli \
 		typescript
 
 .PHONY: setup-zsh
