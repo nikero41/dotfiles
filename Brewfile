@@ -1,3 +1,6 @@
+# Preserve fnm's Node path for npm installs.
+ENV["PATH"] = ENV.fetch("HOMEBREW_PATH", ENV.fetch("PATH"))
+
 if OS.mac?
   tap "anomalyco/tap", trusted: true
   tap "bellicose100xp/tap" # jiq
@@ -42,7 +45,7 @@ if OS.mac?
   brew "lua"
   brew "luarocks"
   brew "mas"
-  brew "mprocs"
+  brew "dekit"
   brew "python@3.14"
   brew "pipx"
   brew "postgresql@18", link: true
