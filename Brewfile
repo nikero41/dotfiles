@@ -1,118 +1,121 @@
-tap "anomalyco/tap", trusted: true
-tap "bellicose100xp/tap" # jiq
-tap "boolean-maybe/tap" # tiki
-tap "brevity1swos/tap" # rgx
-tap "felixkratz/formulae" # borders
-tap "jorgerojas26/lazysql"
-tap "knqyf263/pet"
-tap "nikitabobko/tap" # aerospace
-tap "raine/workmux"
-brew "bash"
-brew "bat"
-brew "btop"
-brew "coreutils"
-brew "curl"
-brew "dotenv-linter"
-brew "duf"
-brew "eza"
-brew "fd"
-brew "ffmpeg"
-brew "fnm", postinstall: "fnm install --lts"
-brew "fx"
-brew "fzf"
-brew "gcc"
-brew "gdu"
-brew "gh"
-brew "ghostscript"
-brew "git"
-brew "git-delta"
-brew "glow"
-brew "golangci-lint"
-brew "grep"
-brew "gum"
-brew "hunk"
-brew "libtool"
-brew "imagemagick"
-brew "jenv"
-brew "jq"
-brew "lazydocker"
-brew "lazygit"
-brew "lnav"
-brew "lua"
-brew "luarocks"
-brew "mas"
-brew "mprocs"
-brew "python@3.14"
-brew "pipx"
-brew "postgresql@18", link: true
-brew "presenterm"
-brew "ripgrep"
-brew "rust"
-brew "rustup"
-# CLI search and replace | Space Age seD
-brew "sad"
-brew "spotifyd"
-brew "starship"
-brew "stow"
-brew "tailspin"
-brew "thefuck"
-brew "tlrc"
-brew "tmux"
-brew "tmuxinator"
-brew "topgrade"
-brew "typos-cli"
-brew "vhs"
-brew "worktrunk"
-brew "yazi"
-brew "yq"
-brew "zoxide"
-brew "anomalyco/tap/opencode-v2", trusted: true
-brew "bellicose100xp/tap/jiq", trusted: true
-brew "boolean-maybe/tap/tiki", trusted: true
-brew "brevity1swos/tap/rgx", trusted: true
-brew "felixkratz/formulae/borders", trusted: true
-brew "jorgerojas26/lazysql/lazysql", trusted: true
-brew "knqyf263/pet/pet", trusted: true
-brew "raine/workmux/workmux", trusted: true
-cask "1password-cli"
-cask "nikitabobko/tap/aerospace", trusted: true
-cask "android-studio"
-cask "betterdisplay"
-cask "caskhub"
-cask "docker-desktop"
-cask "font-fira-code-nerd-font"
-cask "font-jetbrains-mono-nerd-font"
-cask "ghostty"
-cask "google-chrome"
-cask "hammerspoon"
-cask "hiddenbar"
-cask "homebrew-app"
-cask "linearmouse"
-cask "localsend"
-cask "logi-options+"
-cask "neohtop"
-cask "ngrok"
-cask "postman"
-cask "raycast"
-cask "react-native-debugger"
-cask "spotify"
-cask "tableplus"
-cask "todoist-app"
-cask "visual-studio-code"
-cask "wezterm"
-cask "zen"
-cask "zulu@17"
-mas "Amphetamine", id: 937984704
-mas "Bitwarden", id: 1352778147
-mas "DevCleaner", id: 1388020431
-mas "Developer", id: 640199958
-mas "Keynote", id: 361285480
-mas "Numbers", id: 361304891
-mas "Pages", id: 361309726
-mas "Slack", id: 803453959
-mas "TestFlight", id: 899247664
-mas "WhatsApp", id: 310633997
-mas "Xcode", id: 497799835
+if OS.mac?
+  tap "anomalyco/tap", trusted: true
+  tap "bellicose100xp/tap" # jiq
+  tap "boolean-maybe/tap" # tiki
+  tap "brevity1swos/tap" # rgx
+  tap "felixkratz/formulae" # borders
+  tap "jorgerojas26/lazysql"
+  tap "knqyf263/pet"
+  tap "nikitabobko/tap" # aerospace
+  tap "raine/workmux"
+  brew "bash"
+  brew "bat"
+  brew "btop"
+  brew "coreutils"
+  brew "curl"
+  brew "dotenv-linter"
+  brew "duf"
+  brew "eza"
+  brew "fd"
+  brew "ffmpeg"
+  brew "fnm", postinstall: "fnm install --lts"
+  brew "fx"
+  brew "fzf"
+  brew "gcc"
+  brew "gdu"
+  brew "gh"
+  brew "ghostscript"
+  brew "git"
+  brew "git-delta"
+  brew "glow"
+  brew "golangci-lint"
+  brew "grep"
+  brew "gum"
+  brew "hunk"
+  brew "libtool"
+  brew "imagemagick"
+  brew "jenv"
+  brew "jq"
+  brew "lazydocker"
+  brew "lazygit"
+  brew "lnav"
+  brew "lua"
+  brew "luarocks"
+  brew "mas"
+  brew "mprocs"
+  brew "python@3.14"
+  brew "pipx"
+  brew "postgresql@18", link: true
+  brew "presenterm"
+  brew "ripgrep"
+  brew "rust"
+  brew "rustup"
+  # CLI search and replace | Space Age seD
+  brew "sad"
+  brew "spotifyd"
+  brew "starship"
+  brew "stow"
+  brew "tailspin"
+  brew "thefuck"
+  brew "tlrc"
+  brew "tmux"
+  brew "tmuxinator"
+  brew "topgrade"
+  brew "tuicr"
+  brew "typos-cli"
+  brew "vhs"
+  brew "worktrunk"
+  brew "yazi"
+  brew "yq"
+  brew "zoxide"
+  brew "anomalyco/tap/opencode-v2", trusted: true
+  brew "bellicose100xp/tap/jiq", trusted: true
+  brew "boolean-maybe/tap/tiki", trusted: true
+  brew "brevity1swos/tap/rgx", trusted: true
+  brew "felixkratz/formulae/borders", trusted: true
+  brew "jorgerojas26/lazysql/lazysql", trusted: true
+  brew "knqyf263/pet/pet", trusted: true
+  brew "raine/workmux/workmux", trusted: true
+  cask "1password-cli"
+  cask "nikitabobko/tap/aerospace", trusted: true
+  cask "android-studio"
+  cask "betterdisplay"
+  cask "caskhub"
+  cask "docker-desktop"
+  cask "font-fira-code-nerd-font"
+  cask "font-jetbrains-mono-nerd-font"
+  cask "ghostty"
+  cask "google-chrome"
+  cask "hammerspoon"
+  cask "hiddenbar"
+  cask "homebrew-app"
+  cask "linearmouse"
+  cask "localsend"
+  cask "logi-options+"
+  cask "neohtop"
+  cask "ngrok"
+  cask "postman"
+  cask "raycast"
+  cask "react-native-debugger"
+  cask "spotify"
+  cask "tableplus"
+  cask "todoist-app"
+  cask "visual-studio-code"
+  cask "wezterm"
+  cask "zen"
+  cask "zulu@17"
+  mas "Amphetamine", id: 937984704
+  mas "Bitwarden", id: 1352778147
+  mas "DevCleaner", id: 1388020431
+  mas "Developer", id: 640199958
+  mas "Keynote", id: 361285480
+  mas "Numbers", id: 361304891
+  mas "Pages", id: 361309726
+  mas "Slack", id: 803453959
+  mas "TestFlight", id: 899247664
+  mas "WhatsApp", id: 310633997
+  mas "Xcode", id: 497799835
+end
 go "github.com/air-verse/air"
 go "github.com/spf13/cobra-cli"
 go "github.com/Gelio/go-global-update"
