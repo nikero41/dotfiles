@@ -20,9 +20,9 @@ all: link setup-launchagents setup-homebrew install-packages setup-tmux setup-ya
 link:
 	@$(call log,"Setting up dotfiles")
 	@stow $(STOW_PACKAGES)
-	ifeq ($(UNAME_S),Darwin)
-		@stow --no-folding launchagents
-	endif
+ifeq ($(UNAME_S),Darwin)
+	@stow --no-folding launchagents
+endif
 
 .PHONY: setup-launchagents
 setup-launchagents: link
@@ -106,5 +106,5 @@ setup-zsh:
 .PHONY: setup-env-vars
 setup-env-vars:
 	@$(call log,"Setting up environment variables")
-	@op inject -i ./zsh/dot-config/zsh/env.template -o ./zsh/dot-config/zsh/env.zsh
+	@op inject -i ./terminal/dot-config/zsh/env.template -o ./terminal/dot-config/zsh/env.zsh
 	@make setup-zsh
