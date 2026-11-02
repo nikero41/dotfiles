@@ -45,7 +45,7 @@ if OS.mac?
   brew "lua"
   brew "luarocks"
   brew "mas"
-  brew "mprocs"
+  brew "dekit"
   brew "python@3.14"
   brew "pipx"
   brew "postgresql@18", link: true
