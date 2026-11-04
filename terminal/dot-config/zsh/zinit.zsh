@@ -40,6 +40,6 @@ zinit wait"3" lucid depth"1" nocd for \
 
 # Autostart tmux
 zinit wait"4" lucid depth"1" nocd \
-	if'[[ -z $TMUX ]] && [[ "$TERM_PROGRAM" != "vscode" && "$TERM_PROGRAM" != "" ]]' \
+	if'[[ -z $TMUX ]] && [[ "$TERM_PROGRAM" != "vscode" && "$TERM_PROGRAM" != "rex" && "$TERM_PROGRAM" != "" ]]' \
 	atload"start_tmux" \
 	for zdharma-continuum/null
