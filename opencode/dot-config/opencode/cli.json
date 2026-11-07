@@ -37,5 +37,6 @@
 	},
 	"prompt": { "paste": "compact" },
 	"leader": { "timeout": 3000 },
-	"terminal": { "title": true, "copy": "select" }
+	"terminal": { "title": true, "copy": "select" },
+	"experimental": { "todo": true }
 }
