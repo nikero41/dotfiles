@@ -18,9 +18,6 @@ bind(main_mod .. " + V", hl.dsp.window.float({ action = "toggle" }), { descripti
 bind(main_mod .. " + space", hl.dsp.exec_cmd(applications.launcher), {
     description = "Open launcher",
 })
-bind(main_mod .. " + SHIFT + space", hl.dsp.exec_cmd(applications.launcher_fallback), {
-    description = "Open fallback application launcher",
-})
 bind(main_mod .. " + P", hl.dsp.window.pseudo(), { description = "Toggle pseudotiling" })
 bind(main_mod .. " + J", hl.dsp.layout("togglesplit"), { description = "Toggle Dwindle split" })
 bind(main_mod .. " + RETURN", hl.dsp.window.fullscreen({ mode = "maximized" }), {
@@ -133,6 +130,8 @@ bind("XF86AudioMute", hl.dsp.exec_cmd("swayosd-client --output-volume mute-toggl
 -- Physical Left Ctrl toggles Caps Lock under ctrl:swapcaps.
 bind("code:37", hl.dsp.exec_cmd("swayosd-client --caps-lock"), {
     release = true,
+    ignore_mods = true,
+    non_consuming = true,
     description = "Show Caps Lock state",
 })
 bind("XF86AudioMicMute", hl.dsp.exec_cmd("sh ~/.config/hypr/scripts/toggle-mic.sh"), {
@@ -162,6 +161,6 @@ bind("CTRL + SHIFT + space", hl.dsp.global("anomaly.hex:dictation-CTRL-SHIFT-spa
 bind("CTRL + " .. main_mod .. " + space", hl.dsp.exec_cmd("hyprctl switchxkblayout all next"), {
     description = "Switch keyboard layout",
 })
-bind("CTRL + ALT + space", hl.dsp.exec_cmd("rofi -modi emoji -show emoji -emoji-format '{emoji}' -kb-secondary-copy '' -kb-custom-1 Ctrl+c"), {
+bind("CTRL + ALT + space", hl.dsp.exec_cmd("vicinae vicinae://launch/core/search-emojis"), {
     description = "Open emoji picker",
 })
