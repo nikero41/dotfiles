@@ -20,7 +20,6 @@ bind -N "Toggle vertical layouts" / if-shell -F \
     select-layout main-vertical
     set -g @toggle_layout main-vertical
   }
-# W (not A): A is the btop "Activity monitor" popup below
 bind -N "Auto-size window" W set-window-option window-size latest
 
 # popups
