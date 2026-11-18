@@ -117,9 +117,9 @@ set -g @offline_icon "offline"
 
 # Thumbs
 set -g @plugin "fcsonline/tmux-thumbs"
-unbind \;
-bind \; thumbs-pick
-set -g @thumbs-key ;
+# The plugin runs `tmux bind-key "<@thumbs-key>"` from a shell script, where a bare `;`
+# is a command separator, so the value must be a literal backslash + semicolon (`\;`).
+set -g @thumbs-key "\\;"
 set -gF @thumbs-fg-color "#{@thm_mauve}"
 set -gF @thumbs-hint-fg-color "#{@thm_peach}"
 set -gF @thumbs-select-fg-color "#{@thm_red}"
@@ -129,6 +129,7 @@ if-shell '[ "$(uname -s)" = Darwin ]' \
   'set -g @thumbs-command "echo -n {} | pbcopy"' \
   'set -g @thumbs-command "echo -n {} | wl-copy"'
 
+# Load tmux-thumbs eagerly: it registers the `thumbs-pick` alias and binds @thumbs-key
 if-shell "test -f '#{TMUX_PLUGIN_MANAGER_PATH}/tmux-thumbs/tmux-thumbs.tmux'" \
   "run '#{TMUX_PLUGIN_MANAGER_PATH}/tmux-thumbs/tmux-thumbs.tmux'"
 

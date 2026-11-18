@@ -1,6 +1,3 @@
-%hidden COLOR_PRIMARY="#{@thm_peach}"
-%hidden COLOR_MUTED="#{@thm_surface_1}"
-
 source-file -F "#{HOME}/.config/tmux/status-widgets/widgets.tmux"
 
 set -g status-position top
