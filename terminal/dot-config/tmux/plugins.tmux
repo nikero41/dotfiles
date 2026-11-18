@@ -117,9 +117,7 @@ set -g @offline_icon "offline"
 
 # Thumbs
 set -g @plugin "fcsonline/tmux-thumbs"
-unbind \;
-bind \; thumbs-pick
-set -g @thumbs-key ;
+set -g @thumbs-key "\\;"
 set -gF @thumbs-fg-color "#{@thm_mauve}"
 set -gF @thumbs-hint-fg-color "#{@thm_peach}"
 set -gF @thumbs-select-fg-color "#{@thm_red}"

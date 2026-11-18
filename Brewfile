@@ -31,6 +31,7 @@ if OS.mac?
   brew "git"
   brew "git-delta"
   brew "glow"
+  brew "go"
   brew "golangci-lint"
   brew "grep"
   brew "gum"
